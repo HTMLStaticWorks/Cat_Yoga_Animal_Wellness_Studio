@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Classes by Type | Cat Yoga & Animal Wellness Studio</title>
+    <meta name="description" content="Explore our diverse feline wellness classes: Kitten Flow Yoga, Gentle Purr Restorative, Sound Baths, and Senior Cat Mobility.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+
+    <!-- Font Awesome for Social Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+
+    <!-- Header / Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <i data-lucide="cat" class="me-2 text-primary-custom"></i>
+                PAWZEN
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <!-- Home Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Home</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="index.html">Home 1 (Highlights)</a></li>
+                            <li><a class="dropdown-item" href="home-2.html">Home 2 (Sanctuary)</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="services.html">Classes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Adoptions</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+                </ul>
+                <div class="d-flex align-items-center">
+                    <button id="theme-toggle" class="btn btn-link" title="Toggle Theme">
+                        <i data-lucide="moon"></i>
+                    </button>
+                    <button id="rtl-toggle" class="btn btn-link" title="Toggle RTL">
+                        <i data-lucide="arrow-left-right"></i>
+                    </button>
+
+                    <a href="login.html" class="btn btn-primary ms-2">Login</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header" style="background-image: linear-gradient(135deg, rgba(15, 23, 19, 0.88) 0%, rgba(15, 23, 19, 0.7) 50%, rgba(15, 23, 19, 0.55) 100%), url('https://images.unsplash.com/photo-1545205597-3d9d02c29597?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
+        <div class="container text-center text-white">
+            <h1 class="display-3 fw-bold tracking-widest text-white">CLASSES BY TYPE</h1>
+            <p class="lead text-white opacity-90">From joyful kitten flow to deeply healing sound baths. Find your ideal feline session.</p>
+        </div>
+    </header>
+
+    <!-- Services Grid: Classes by Type -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="row g-4 justify-content-center">
+                <!-- Kitten Flow -->
+                <div class="col-lg-4 col-md-6 animate-on-scroll">
+                    <div class="climb-card h-100 shadow-sm rounded-4 overflow-hidden bg-white">
+                        <img src="https://images.unsplash.com/photo-1548802673-380ab8ebc7b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Kitten Vinyasa Flow"
+                            style="height: 250px; object-fit: cover;">
+                        <div class="card-body p-4 text-center">
+                            <span class="badge bg-light text-primary-custom px-3 py-1 rounded-pill mb-2 fw-bold">All Levels &bull; 60 Mins</span>
+                            <h4 class="fw-bold tracking-widest m-0">KITTEN VINYASA FLOW</h4>
+                            <p class="text-muted small mb-4 mt-2">Dynamic, lighthearted flow surrounded by playful foster kittens. Perfect for elevating energy and emotional joy.</p>
+                            <a href="login.html?dashboard=true" class="btn btn-primary w-100 py-3">BOOK SESSION SLOT</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Gentle Restorative -->
+                <div class="col-lg-4 col-md-6 animate-on-scroll">
+                    <div class="climb-card h-100 shadow-sm rounded-4 overflow-hidden bg-white">
+                        <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Gentle Purr Restorative"
+                            style="height: 250px; object-fit: cover;">
+                        <div class="card-body p-4 text-center">
+                            <span class="badge bg-light text-primary-custom px-3 py-1 rounded-pill mb-2 fw-bold">Calming &bull; 75 Mins</span>
+                            <h4 class="fw-bold tracking-widest">GENTLE PURR RESTORATIVE</h4>
+                            <p class="text-muted small mb-4 mt-2">Floor-supported restorative postures and calming breathwork while serene adult cats rest alongside your mat.</p>
+                            <a href="login.html?dashboard=true" class="btn btn-primary w-100 py-3">BOOK SESSION SLOT</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Sound Bath & Meditation -->
+                <div class="col-lg-4 col-md-6 animate-on-scroll">
+                    <div class="climb-card h-100 shadow-sm rounded-4 overflow-hidden bg-white">
+                        <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Sound Bath & Meowitation"
+                            style="height: 250px; object-fit: cover;">
+                        <div class="card-body p-4 text-center">
+                            <span class="badge bg-light text-primary-custom px-3 py-1 rounded-pill mb-2 fw-bold">Sound Healing &bull; 60 Mins</span>
+                            <h4 class="fw-bold tracking-widest">SOUND BATH &amp; MEOWITATION</h4>
+                            <p class="text-muted small mb-4 mt-2">Crystal singing bowl vibrations tuned to harmonic purr frequencies for somatic nervous system reset.</p>
+                            <a href="login.html?dashboard=true" class="btn btn-primary w-100 py-3">BOOK SESSION SLOT</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Senior Cat Mobility -->
+                <div class="col-lg-4 col-md-6 animate-on-scroll">
+                    <div class="climb-card h-100 shadow-sm rounded-4 overflow-hidden bg-white">
+                        <img src="https://images.unsplash.com/photo-1574158622682-e40e69881006?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Senior Cat Gentle Mobility"
+                            style="height: 250px; object-fit: cover;">
+                        <div class="card-body p-4 text-center">
+                            <span class="badge bg-light text-primary-custom px-3 py-1 rounded-pill mb-2 fw-bold">Gentle &bull; 60 Mins</span>
+                            <h4 class="fw-bold tracking-widest">SENIOR CAT GENTLE MOBILITY</h4>
+                            <p class="text-muted small mb-4 mt-2">Low-impact joint mobility and gentle spine decompression alongside our wisest, calmest senior resident rescues.</p>
+                            <a href="login.html?dashboard=true" class="btn btn-primary w-100 py-3">BOOK SESSION SLOT</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Meow & Core Alignment -->
+                <div class="col-lg-4 col-md-6 animate-on-scroll">
+                    <div class="climb-card h-100 shadow-sm rounded-4 overflow-hidden bg-white">
+                        <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Meow & Core Alignment"
+                            style="height: 250px; object-fit: cover;">
+                        <div class="card-body p-4 text-center">
+                            <span class="badge bg-light text-primary-custom px-3 py-1 rounded-pill mb-2 fw-bold">Strength &bull; 60 Mins</span>
+                            <h4 class="fw-bold tracking-widest">MEOW &amp; CORE ALIGNMENT</h4>
+                            <p class="text-muted small mb-4 mt-2">Posture correction, balance, and spine flexibility inspired by feline grace with affectionate roaming companions.</p>
+                            <a href="login.html?dashboard=true" class="btn btn-primary w-100 py-3">BOOK SESSION SLOT</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Private Animal Therapy -->
+                <div class="col-lg-4 col-md-6 animate-on-scroll">
+                    <div class="climb-card h-100 shadow-sm rounded-4 overflow-hidden bg-white">
+                        <img src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Private Animal Therapy"
+                            style="height: 250px; object-fit: cover;">
+                        <div class="card-body p-4 text-center">
+                            <span class="badge bg-light text-primary-custom px-3 py-1 rounded-pill mb-2 fw-bold">Private &bull; 60 Mins</span>
+                            <h4 class="fw-bold tracking-widest">PRIVATE ANIMAL THERAPY</h4>
+                            <p class="text-muted small mb-4 mt-2">Customized 1-on-1 nervous system regulation and animal-assisted wellness tailored to your personal goals.</p>
+                            <a href="login.html?dashboard=true" class="btn btn-primary w-100 py-3">BOOK SESSION SLOT</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expert Instructors -->
+    <section class="section-padding bg-light grid-pattern">
+        <div class="container">
+            <div class="text-center mb-5 animate-on-scroll">
+                <h2 class="display-5 fw-bold tracking-widest uppercase">MEET THE INSTRUCTORS</h2>
+                <p class="text-muted">Passionate certified yogis and animal welfare specialists dedicated to your wellbeing.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-3 animate-on-scroll">
+                    <div class="text-center">
+                        <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                            class="rounded-circle mb-3 shadow" style="width: 150px; height: 150px; object-fit: cover;"
+                            alt="Maya Chen">
+                        <h5 class="fw-bold mb-1">MAYA CHEN</h5>
+                        <p class="text-primary-custom small fw-bold">Lead Yoga Director</p>
+                    </div>
+                </div>
+                <div class="col-md-3 animate-on-scroll">
+                    <div class="text-center">
+                        <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                            class="rounded-circle mb-3 shadow" style="width: 150px; height: 150px; object-fit: cover;"
+                            alt="Dr. Elena Ramos">
+                        <h5 class="fw-bold mb-1">DR. ELENA RAMOS</h5>
+                        <p class="text-primary-custom small fw-bold">Animal Welfare Specialist</p>
+                    </div>
+                </div>
+                <div class="col-md-3 animate-on-scroll">
+                    <div class="text-center">
+                        <img src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                            class="rounded-circle mb-3 shadow" style="width: 150px; height: 150px; object-fit: cover;"
+                            alt="Leo Carter">
+                        <h5 class="fw-bold mb-1">LEO CARTER</h5>
+                        <p class="text-primary-custom small fw-bold">Sound Healer &amp; Breathwork</p>
+                    </div>
+                </div>
+                <div class="col-md-3 animate-on-scroll">
+                    <div class="text-center">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                            class="rounded-circle mb-3 shadow" style="width: 150px; height: 150px; object-fit: cover;"
+                            alt="Sara Jenkins">
+                        <h5 class="fw-bold mb-1">SARA JENKINS</h5>
+                        <p class="text-primary-custom small fw-bold">Restorative &amp; Adoptions</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Weekly Schedule Table -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="text-center mb-5 animate-on-scroll">
+                <h2 class="display-5 fw-bold tracking-widest uppercase">WEEKLY PURR SCHEDULE</h2>
+                <p class="text-muted">Pick your favorite session slot and book in advance.</p>
+            </div>
+            <div class="table-responsive animate-on-scroll">
+                <table class="table table-hover align-middle bg-white shadow-sm rounded-4 overflow-hidden">
+                    <thead class="bg-dark text-white">
+                        <tr>
+                            <th class="py-4 px-4">TIME</th>
+                            <th class="py-4">MONDAY</th>
+                            <th class="py-4">WEDNESDAY</th>
+                            <th class="py-4">FRIDAY</th>
+                            <th class="py-4">SATURDAY &amp; SUN</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="px-4 fw-bold">08:00 AM</td>
+                            <td><span class="badge bg-secondary-custom text-white px-3 py-2">Morning Kitten Flow</span></td>
+                            <td><span class="badge bg-light text-muted px-3 py-2">-</span></td>
+                            <td><span class="badge bg-secondary-custom text-white px-3 py-2">Morning Kitten Flow</span></td>
+                            <td><span class="badge bg-primary-custom text-white px-3 py-2">Weekend Purr Awakening</span></td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 fw-bold">12:30 PM</td>
+                            <td><span class="badge bg-light text-muted px-3 py-2">-</span></td>
+                            <td><span class="badge bg-secondary-custom text-white px-3 py-2">Lunchtime Meow-Stretch</span></td>
+                            <td><span class="badge bg-light text-muted px-3 py-2">-</span></td>
+                            <td><span class="badge bg-primary-custom text-white px-3 py-2">Family Cat Yoga (All Ages)</span></td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 fw-bold">06:00 PM</td>
+                            <td><span class="badge bg-primary-custom text-white px-3 py-2">Gentle Purr Restorative</span></td>
+                            <td><span class="badge bg-primary-custom text-white px-3 py-2">Sound Bath &amp; Meowitation</span></td>
+                            <td><span class="badge bg-secondary-custom text-white px-3 py-2">Sunset Kitten Flow</span></td>
+                            <td><span class="badge bg-secondary-custom text-white px-3 py-2">Full Moon Purr Meditation</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer section-padding pb-4">
+        <div class="container">
+            <div class="row g-5 text-start">
+                <div class="col-lg-4">
+                    <a class="navbar-brand mb-4 d-block" href="index.html">
+                        <i data-lucide="cat" class="me-2 text-primary-custom"></i>
+                        PAWZEN
+                    </a>
+                    <p class="text-light-50 mb-4">A tranquil urban sanctuary uniting somatic yoga movement, animal-assisted wellness, and compassionate feline rescue partnerships.</p>
+                    <div class="d-flex gap-3 social-links">
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="mb-4">QUICK LINKS</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="about.html" class="text-light-50 text-decoration-none">About Us</a></li>
+                        <li class="mb-2"><a href="services.html" class="text-light-50 text-decoration-none">Classes by Type</a></li>
+                        <li class="mb-2"><a href="gallery.html" class="text-light-50 text-decoration-none">Adoption Partners</a></li>
+                        <li class="mb-2"><a href="pricing.html" class="text-light-50 text-decoration-none">Pricing &amp; Packs</a></li>
+                        <li class="mb-2"><a href="login.html" class="text-light-50 text-decoration-none">Guest Dashboard</a></li>
+                        <li class="mb-2"><a href="contact.html" class="text-light-50 text-decoration-none">Contact Studio</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h5 class="mb-4">STUDIO HOURS</h5>
+                    <ul class="list-unstyled text-light-50">
+                        <li class="mb-2">Mon - Fri: 7:00 AM - 9:00 PM</li>
+                        <li class="mb-2">Sat: 8:00 AM - 8:00 PM</li>
+                        <li class="mb-2">Sun: 8:00 AM - 7:00 PM</li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h5 class="mb-4">NEWSLETTER</h5>
+                    <p class="text-light-50 mb-3">Get notifications for new foster kitten litters and sound bath events.</p>
+                    <div class="input-group">
+                        <input type="email" class="form-control" placeholder="Email Address">
+                        <button class="btn btn-primary">SUBMIT</button>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-5 opacity-25">
+            <div class="text-center text-light-50 small">
+                <p>&copy; 2026 Cat Yoga &amp; Animal Wellness Studio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

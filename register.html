@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guest Registration &amp; Animal Waiver | Cat Yoga &amp; Animal Wellness Studio</title>
+    <meta name="description" content="Create your guest account, sign the animal safety waiver, and start reserving cat yoga sessions and packs.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+
+    <!-- Font Awesome for Social Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            background-color: var(--light-bg);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            padding-top: 40px !important;
+        }
+    </style>
+</head>
+
+<body class="auth-page">
+
+    <!-- Top Floating Toggles -->
+    <div class="position-fixed top-0 end-0 p-3 d-flex gap-2 z-3">
+        <button id="theme-toggle" class="btn btn-white bg-white shadow-sm rounded-circle p-2" title="Toggle Theme">
+            <i data-lucide="moon" class="size-20"></i>
+        </button>
+        <button id="rtl-toggle" class="btn btn-white bg-white shadow-sm rounded-circle p-2" title="Toggle RTL">
+            <i data-lucide="arrow-left-right" class="size-20"></i>
+        </button>
+    </div>
+
+    <!-- Auth Card -->
+    <div class="card auth-card animate-on-scroll mx-auto shadow-lg border-0 rounded-4 bg-white" style="max-width: 500px; margin-top: 20px;">
+        <div class="card-body p-4 p-md-4 text-center">
+            <div class="mb-3">
+                <a href="index.html" class="navbar-brand text-decoration-none d-inline-flex align-items-center justify-content-center mb-2 fs-4">
+                    <i data-lucide="cat" class="me-2 size-28"></i>
+                    PAWZEN
+                </a>
+                <div>
+                    <span class="badge bg-light text-primary-custom px-3 py-1 rounded-pill small fw-semibold">New Guest Sign-Up</span>
+                </div>
+            </div>
+
+            <h2 class="h5 mb-2 fw-bold">CREATE GUEST ACCOUNT</h2>
+            <p class="text-muted small mb-3">Complete your registration to book class session slots and sign the digital animal safety waiver.</p>
+
+            <!-- Register Form -->
+            <form onsubmit="event.preventDefault(); window.location.href='dashboard.html';">
+                <div class="mb-3 text-start">
+                    <label class="form-label small fw-bold tracking-widest">FULL NAME</label>
+                    <input type="text" class="form-control py-2" placeholder="Enter your full name" required>
+                </div>
+                <div class="mb-3 text-start">
+                    <label class="form-label small fw-bold tracking-widest">EMAIL ADDRESS</label>
+                    <input type="email" class="form-control py-2" placeholder="Enter your email address" required>
+                </div>
+                <div class="mb-3 text-start">
+                    <label class="form-label small fw-bold tracking-widest">PREFERRED CLASS EXPERIENCE</label>
+                    <select class="form-select py-2">
+                        <option value="">Select a class experience</option>
+                        <option>Kitten Vinyasa Flow (Playful &amp; Active)</option>
+                        <option>Gentle Purr Restorative (Relaxing Yin)</option>
+                        <option>Feline Sound Bath &amp; Meditation</option>
+                        <option>Senior Cat Gentle Stretch</option>
+                    </select>
+                </div>
+                <div class="mb-3 text-start">
+                    <label class="form-label small fw-bold tracking-widest">PASSWORD</label>
+                    <div class="password-field-wrapper position-relative">
+                        <input type="password" id="password-input" class="form-control py-2" placeholder="Create a password" required>
+                        <div class="password-toggle position-absolute top-50 end-0 translate-middle-y pe-3" style="cursor: pointer;" onclick="togglePasswordVisibility('password-input', this)">
+                            <i data-lucide="eye" class="size-18 text-muted"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-check text-start mb-3 p-3 bg-light rounded-3">
+                    <input class="form-check-input ms-0 me-2" type="checkbox" id="terms" required>
+                    <label class="form-check-label small text-muted" for="terms">
+                        I agree to the <a href="#" class="text-primary-custom fw-bold">Digital Animal Safety Waiver</a> &amp; confirm I will treat all rescue felines with gentleness and respect.
+                    </label>
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100 py-2 mb-3 fw-bold small">CREATE ACCOUNT &amp; OPEN DASHBOARD</button>
+
+                <div class="d-flex align-items-center mb-4">
+                    <hr class="flex-grow-1">
+                    <span class="px-3 text-muted small tracking-widest">OR SIGN UP WITH</span>
+                    <hr class="flex-grow-1">
+                </div>
+
+                <!-- Social Logins -->
+                <div class="d-flex gap-3 justify-content-center">
+                    <a href="login.html?dashboard=true" class="social-btn btn btn-light rounded-circle shadow-sm p-3" title="Google">
+                        <i class="fa-brands fa-google text-danger"></i>
+                    </a>
+                    <a href="login.html?dashboard=true" class="social-btn btn btn-light rounded-circle shadow-sm p-3" title="Apple">
+                        <i class="fa-brands fa-apple text-dark"></i>
+                    </a>
+                </div>
+
+                <p class="mt-4 mb-0 text-muted small">Already a registered guest? <a href="login.html"
+                        class="text-secondary-custom fw-bold">Sign In to Portal</a></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="assets/js/main.js"></script>
+    <script>
+        function togglePasswordVisibility(inputId, el) {
+            const input = document.getElementById(inputId);
+            const type = input.getAttribute('type') === 'password' ? 'text' : 'password';
+            input.setAttribute('type', type);
+
+            const icon = el.querySelector('i');
+            if (type === 'text') {
+                icon.setAttribute('data-lucide', 'eye-off');
+            } else {
+                icon.setAttribute('data-lucide', 'eye');
+            }
+            if (window.lucide) lucide.createIcons();
+        }
+    </script>
+</body>
+
+</html>

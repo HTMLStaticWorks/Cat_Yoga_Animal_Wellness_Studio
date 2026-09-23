@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Sanctuary Experience Coming Soon | Cat Yoga &amp; Animal Wellness Studio</title>
+    <meta name="description" content="We are preparing something special for our feline sanctuary community. Stay tuned!">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .coming-soon {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(32, 39, 36, 0.75), rgba(32, 39, 36, 0.85)), url('https://images.unsplash.com/photo-1599447421416-3414500d18a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
+            color: white;
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+
+        .countdown-item {
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(8px);
+            padding: 20px;
+            min-width: 100px;
+            border-radius: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .countdown-number {
+            font-size: 3rem;
+            font-family: var(--heading-font);
+            display: block;
+            line-height: 1;
+            color: var(--secondary-color);
+        }
+
+        .countdown-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            opacity: 0.85;
+            letter-spacing: 1px;
+        }
+    </style>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>
+</head>
+
+<body>
+
+    <div class="coming-soon">
+        <div class="container">
+            <i data-lucide="cat" class="size-64 mb-4 text-secondary-custom"></i>
+            <h1 class="display-2 fw-bold mb-3">PAWS IN PROGRESS</h1>
+            <p class="lead mb-5 opacity-90">We're expanding our feline wellness sanctuary! Our new Kitten Sound Healing &amp; Foster Nursery loft is opening soon.</p>
+
+            <div class="countdown">
+                <div class="countdown-item">
+                    <span class="countdown-number">14</span>
+                    <span class="countdown-label">Days</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number">08</span>
+                    <span class="countdown-label">Hours</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number">45</span>
+                    <span class="countdown-label">Mins</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number">12</span>
+                    <span class="countdown-label">Secs</span>
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <h5 class="mb-3 fw-bold">NOTIFY ME ON GRAND OPENING</h5>
+                    <form onsubmit="event.preventDefault(); alert('You are subscribed for opening notifications!');" class="mb-4">
+                        <div class="input-group">
+                            <input type="email" class="form-control py-3 bg-transparent text-white border-white" placeholder="Enter your email" required>
+                            <button class="btn btn-secondary px-4 fw-bold">NOTIFY ME</button>
+                        </div>
+                    </form>
+                    <div class="d-flex justify-content-center gap-3">
+                        <a href="index.html" class="btn btn-outline-light rounded-pill px-4 btn-sm">Return to Studio Home</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Theme / RTL Toggles -->
+    <div class="auth-toggles d-flex gap-2">
+        <button id="theme-toggle" class="btn btn-white shadow-sm rounded-circle p-2" title="Toggle Theme">
+            <i data-lucide="moon" class="size-20"></i>
+        </button>
+        <button id="rtl-toggle" class="btn btn-white shadow-sm rounded-circle p-2" title="Toggle RTL">
+            <i data-lucide="arrow-left-right" class="size-20"></i>
+        </button>
+    </div>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

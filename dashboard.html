@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guest Sanctuary Dashboard | PAWZEN Cat Yoga &amp; Animal Wellness</title>
+    <meta name="description"
+        content="Guest dashboard for booking class session slots, tracking class pack usage, viewing upcoming special event schedules, and managing payments.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+
+    <!-- Font Awesome for Card Brands -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="dashboard-body">
+
+    <!-- Mobile Sidebar Backdrop Overlay -->
+    <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+    <!-- Complete Dashboard Layout -->
+    <div class="dashboard-layout">
+
+        <!-- 1. LEFT SIDEBAR NAVIGATION -->
+        <aside class="dashboard-sidebar" id="dashboardSidebar">
+            <div>
+                <!-- Brand Header -->
+                <div class="sidebar-brand-container">
+                    <a class="sidebar-brand text-decoration-none" href="index.html">
+                        <div class="brand-icon-box">
+                            <i data-lucide="cat"></i>
+                        </div>
+                        <span class="brand-name">PAWZEN</span>
+                    </a>
+                    <button class="btn-close d-lg-none" id="sidebarCloseBtn" aria-label="Close Sidebar"></button>
+                </div>
+
+                <!-- Sidebar Nav Menu -->
+                <nav class="sidebar-nav">
+                    <ul class="sidebar-menu list-unstyled mb-0">
+                        <li class="sidebar-item">
+                            <button class="sidebar-link active" data-tab="overview">
+                                <i data-lucide="layout-dashboard" class="size-20"></i>
+                                <span>Overview</span>
+                            </button>
+                        </li>
+                        <li class="sidebar-item">
+                            <button class="sidebar-link" data-tab="bookings">
+                                <i data-lucide="calendar-check-2" class="size-20"></i>
+                                <span>Bookings &amp; Sessions</span>
+                            </button>
+                        </li>
+                        <li class="sidebar-item">
+                            <button class="sidebar-link" data-tab="pack-usage">
+                                <i data-lucide="award" class="size-20"></i>
+                                <span>Class Pack &amp; Credits</span>
+                            </button>
+                        </li>
+                        <li class="sidebar-item">
+                            <button class="sidebar-link" data-tab="events">
+                                <i data-lucide="sparkles" class="size-20"></i>
+                                <span>Special Events &amp; Calendar</span>
+                            </button>
+                        </li>
+                        <li class="sidebar-item">
+                            <button class="sidebar-link" data-tab="waiver-reminders">
+                                <i data-lucide="shield-check" class="size-20"></i>
+                                <span>Wellness Waiver &amp; Care</span>
+                            </button>
+                        </li>
+                        <li class="sidebar-item">
+                            <button class="sidebar-link" data-tab="billing">
+                                <i data-lucide="credit-card" class="size-20"></i>
+                                <span>Billing &amp; Invoices</span>
+                            </button>
+                        </li>
+                        <li class="sidebar-item">
+                            <button class="sidebar-link" data-tab="profile">
+                                <i data-lucide="user-check" class="size-20"></i>
+                                <span>Guest Profile &amp; Settings</span>
+                            </button>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- Sidebar Bottom Exit Action -->
+            <div class="sidebar-footer">
+                <a href="index.html" class="sidebar-exit-btn">
+                    <i data-lucide="log-out" class="size-20"></i>
+                    <span>Exit Portal</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- 2. MAIN CONTENT AREA -->
+        <main class="dashboard-main">
+
+            <!-- Portal Top Header -->
+            <header class="dash-portal-header">
+                <div class="dash-header-left">
+                    <button id="sidebarToggleBtn" class="dash-icon-btn d-lg-none" aria-label="Open Sidebar Menu">
+                        <i data-lucide="menu" class="size-20"></i>
+                    </button>
+                    <div>
+                        <h1 class="dash-page-title" id="dashHeaderTitle">Welcome message</h1>
+                    </div>
+                </div>
+
+                <div class="dash-header-actions">
+                    <!-- Theme Toggle -->
+                    <button id="theme-toggle" class="dash-icon-btn" title="Toggle Dark/Light Mode">
+                        <i data-lucide="moon" class="size-18"></i>
+                    </button>
+
+                    <!-- RTL Toggle -->
+                    <button id="rtl-toggle" class="dash-icon-btn" title="Toggle RTL Alignment">
+                        <i data-lucide="arrow-left-right" class="size-18"></i>
+                    </button>
+
+                    <!-- User Initials Avatar -->
+                    <div class="dash-user-avatar" id="userAvatarPill" title="Maya Parker - Active Sanctuary Guest" onclick="switchDashboardTab('profile')">
+                        <span>JD</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- ==============================================
+                 TABS CONTENT CONTAINER
+                 ============================================== -->
+
+            <!-- TAB 1: OVERVIEW -->
+            <div id="overview" class="tab-content active">
+
+                <!-- Top 4 Stat Cards Grid -->
+                <div class="dash-stat-grid">
+                    <div class="dash-stat-card">
+                        <div class="stat-value text-primary-custom">Cycle 3/6</div>
+                        <div class="stat-label">Chemotherapy Regimen</div>
+                    </div>
+
+                    <div class="dash-stat-card">
+                        <div class="stat-value text-secondary-custom">Mar 28</div>
+                        <div class="stat-label">Next Infusion Session</div>
+                    </div>
+
+                    <div class="dash-stat-card">
+                        <div class="stat-value" style="color: var(--secondary-light, #F4A261);">100%</div>
+                        <div class="stat-label">Medication Adherence</div>
+                    </div>
+
+                    <div class="dash-stat-card">
+                        <div class="stat-value text-primary-custom">04</div>
+                        <div class="stat-label">Care Team Notes</div>
+                    </div>
+                </div>
+
+                <!-- Featured Upcoming Treatment / Session Card -->
+                <div class="dash-card">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <span class="dash-badge-peach">UPCOMING TREATMENT</span>
+                        <button class="btn btn-outline-primary-custom btn-sm rounded-pill px-3" onclick="switchDashboardTab('events')">View Calendar</button>
+                    </div>
+
+                    <h3 class="dash-card-title mb-3">Next Chemotherapy Infusion (Cycle 4)</h3>
+
+                    <div class="dash-session-row">
+                        <div class="dash-date-box">
+                            <span class="dash-date-month">MAR</span>
+                            <span class="dash-date-day">28</span>
+                        </div>
+
+                        <div class="dash-session-info">
+                            <h5 class="fw-bold mb-1">FOLFOX Infusion &amp; Scalp Cooling Support</h5>
+                            <div class="d-flex flex-wrap gap-3 text-muted small mb-2">
+                                <span><i data-lucide="clock" class="size-14 me-1 align-middle"></i> 08:30 AM (Approx. 3.5 hrs)</span>
+                                <span><i data-lucide="map-pin" class="size-14 me-1 align-middle"></i> Infusion Suite Bay 4 (Heated Recliner)</span>
+                            </div>
+                            <p class="dash-session-subnote mb-0">
+                                <i data-lucide="info" class="size-14 me-1 text-primary-custom align-middle"></i> Pre-chemotherapy lab draw scheduled for Mar 27 at 10:00 AM.
+                            </p>
+                        </div>
+
+                        <div class="dash-session-actions">
+                            <button class="btn btn-primary rounded-pill px-4 py-2 fw-bold text-nowrap" onclick="switchDashboardTab('waiver-reminders')">Cycle Protocol</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Today's Supportive Medications / Activities Card -->
+                <div class="dash-card">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <div>
+                            <h4 class="dash-card-title mb-0">Today's Supportive Medications</h4>
+                            <small class="text-muted">Proactive side-effect prevention schedule</small>
+                        </div>
+                        <button class="btn btn-outline-secondary-custom btn-sm rounded-pill px-3" onclick="switchDashboardTab('pack-usage')">Full Med Log</button>
+                    </div>
+
+                    <div class="dash-activity-list">
+                        <div class="dash-activity-item">
+                            <div class="d-flex align-items-center">
+                                <i data-lucide="check-circle-2" class="text-success me-3 size-22"></i>
+                                <div>
+                                    <div class="fw-bold">Ondansetron (Zofran) 8mg</div>
+                                    <small class="text-muted">Morning dose taken at 8:00 AM &bull; Nausea prevention</small>
+                                </div>
+                            </div>
+                            <span class="badge bg-success-subtle text-success px-3 py-2 rounded-pill font-monospace" style="font-size: 0.75rem;">TAKEN</span>
+                        </div>
+
+                        <div class="dash-activity-item">
+                            <div class="d-flex align-items-center">
+                                <i data-lucide="check-circle-2" class="text-success me-3 size-22"></i>
+                                <div>
+                                    <div class="fw-bold">Dexamethasone 4mg</div>
+                                    <small class="text-muted">Morning dose taken with food at 8:30 AM &bull; Anti-inflammatory</small>
+                                </div>
+                            </div>
+                            <span class="badge bg-success-subtle text-success px-3 py-2 rounded-pill font-monospace" style="font-size: 0.75rem;">TAKEN</span>
+                        </div>
+
+                        <div class="dash-activity-item">
+                            <div class="d-flex align-items-center">
+                                <i data-lucide="droplet" class="text-secondary-custom me-3 size-22"></i>
+                                <div>
+                                    <div class="fw-bold">Hydration Tracker: 1.5L of 2.5L Goal</div>
+                                    <small class="text-muted">Essential for kidney protection during chemo cycle</small>
+                                </div>
+                            </div>
+                            <span class="badge bg-secondary-subtle text-secondary-custom px-3 py-2 rounded-pill font-monospace" style="font-size: 0.75rem;">+250ml Water</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Care Team Notes & Reports Card -->
+                <div class="dash-card">
+                    <h4 class="dash-card-title mb-3">Recent Care Team Notes &amp; Reports</h4>
+                    <div class="dash-notes-list">
+                        <div class="dash-note-item border-bottom pb-3 mb-3">
+                            <div class="d-flex align-items-center gap-2 mb-1">
+                                <i data-lucide="user-check" class="text-primary-custom size-16"></i>
+                                <strong class="small">Dr. Eleanor Vance (Medical Oncology):</strong>
+                                <span class="text-muted small">Post-Cycle 3 blood analysis reviewed. Platelet counts and liver enzymes remain stable.</span>
+                            </div>
+                            <small class="text-muted d-block ms-4">Yesterday at 4:15 PM</small>
+                        </div>
+
+                        <div class="dash-note-item">
+                            <div class="d-flex align-items-center gap-2 mb-1">
+                                <i data-lucide="heart" class="text-secondary-custom size-16"></i>
+                                <strong class="small">Sarah Lin, BSN, OCN (Nurse Navigator):</strong>
+                                <span class="text-muted small">Scalp cooling cap fitting confirmed. Pre-medication prescriptions sent to outpatient pharmacy.</span>
+                            </div>
+                            <small class="text-muted d-block ms-4">Sep 21, 2026 at 11:30 AM</small>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- TAB 2: BOOKINGS & SESSIONS -->
+            <div id="bookings" class="tab-content">
+                <div class="row g-4">
+                    <div class="col-lg-7">
+                        <div class="dash-card h-100">
+                            <h4 class="dash-card-title mb-2">Reserve Class Session Slot</h4>
+                            <p class="text-muted small mb-4">Select your date, yoga style, and animal cuddle preference to reserve your spot.</p>
+
+                            <div id="bookingSuccessAlert" class="alert alert-success d-none rounded-3 mb-4" role="alert">
+                                <i data-lucide="check-circle" class="size-18 me-2 align-middle"></i>
+                                <strong>Slot Reserved Successfully!</strong> Confirmation sent to your email.
+                            </div>
+
+                            <form id="bookSlotForm" onsubmit="handleSlotBooking(event)">
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label small fw-bold">SELECT DATE</label>
+                                        <input type="date" class="form-control py-2" value="2026-09-28" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label small fw-bold">CLASS TYPE</label>
+                                        <select class="form-select py-2" required>
+                                            <option>Gentle Purr Restorative (75 Mins)</option>
+                                            <option>Kitten Vinyasa Flow (60 Mins)</option>
+                                            <option>Sound Bath &amp; Meowitation (60 Mins)</option>
+                                            <option>Senior Cat Gentle Mobility (60 Mins)</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label small fw-bold">TIME SLOT</label>
+                                        <select class="form-select py-2" required>
+                                            <option>Morning Awakening &bull; 08:30 AM</option>
+                                            <option>Lunchtime Meow-Stretch &bull; 12:30 PM</option>
+                                            <option>Sunset Feline Flow &bull; 06:00 PM</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label small fw-bold">LEAD INSTRUCTOR</label>
+                                        <select class="form-select py-2">
+                                            <option>Maya Chen (Lead Yoga Master)</option>
+                                            <option>Leo Carter (Sound Bath Guide)</option>
+                                            <option>Sara Jenkins (Restorative Guide)</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label small fw-bold">FELINE INTERACTION PREFERENCE</label>
+                                        <select class="form-select py-2">
+                                            <option>High Interaction (Playful kitten cuddles &amp; lap visits)</option>
+                                            <option>Calm Restorative (Gentle adult cat lap companion)</option>
+                                            <option>Quiet Zen Observation (Mindful space)</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12 mt-4">
+                                        <button type="submit" class="btn btn-primary w-100 py-3 fw-bold rounded-pill">
+                                            <i data-lucide="check-circle" class="size-18 me-1 align-middle"></i> CONFIRM SLOT (USE 1 PASS CREDIT)
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-5">
+                        <div class="dash-card h-100">
+                            <h5 class="fw-bold mb-3">Your Confirmed Bookings</h5>
+                            <div class="list-group list-group-flush gap-3" id="confirmedBookingsList">
+                                <div class="p-3 bg-light rounded-3 border-start border-4 border-primary-custom">
+                                    <div class="d-flex justify-content-between align-items-center mb-1">
+                                        <span class="badge bg-primary-custom text-white">Mar 28</span>
+                                        <small class="text-muted">08:30 AM</small>
+                                    </div>
+                                    <h6 class="fw-bold mb-1">FOLFOX Infusion &amp; Scalp Cooling</h6>
+                                    <p class="text-muted small mb-0"><i data-lucide="user" class="size-14 me-1"></i> Nurse Sarah Lin &bull; Suite Bay 4</p>
+                                </div>
+
+                                <div class="p-3 bg-light rounded-3 border-start border-4 border-secondary-custom">
+                                    <div class="d-flex justify-content-between align-items-center mb-1">
+                                        <span class="badge bg-secondary-custom text-white">Apr 11</span>
+                                        <small class="text-muted">09:00 AM</small>
+                                    </div>
+                                    <h6 class="fw-bold mb-1">Sound Healing &amp; Restorative Yoga</h6>
+                                    <p class="text-muted small mb-0"><i data-lucide="user" class="size-14 me-1"></i> Maya Chen &bull; Lotus Room</p>
+                                </div>
+                            </div>
+
+                            <div class="p-3 mt-4 bg-light rounded-3 text-center">
+                                <small class="text-muted d-block mb-1">Need to reschedule or cancel?</small>
+                                <small class="text-primary-custom fw-semibold">Zero cancellation fee up to 4 hours prior to session.</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 3: CLASS PACK & CREDITS -->
+            <div id="pack-usage" class="tab-content">
+                <div class="row g-4">
+                    <div class="col-lg-5">
+                        <div class="dash-card h-100">
+                            <span class="dash-badge-peach mb-3">ACTIVE PASS PLAN</span>
+                            <h3 class="fw-bold mb-1">5-Class Multi-Pass</h3>
+                            <p class="text-muted small mb-4">Purchased: Sep 01, 2026 &bull; Valid until: Dec 31, 2026</p>
+
+                            <div class="p-4 bg-light rounded-4 mb-4 text-center">
+                                <div class="display-3 fw-bold text-primary-custom mb-0">3</div>
+                                <div class="text-muted small text-uppercase tracking-wider fw-bold">Credits Remaining</div>
+                            </div>
+
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between small text-muted mb-1">
+                                    <span>Pack Usage</span>
+                                    <strong class="text-dark">2 Used / 3 Remaining (60%)</strong>
+                                </div>
+                                <div class="progress" style="height: 10px;">
+                                    <div class="progress-bar" role="progressbar" style="width: 60%; background: var(--primary-color);" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+
+                            <a href="pricing.html" class="btn btn-primary w-100 py-3 fw-bold rounded-pill">
+                                <i data-lucide="plus" class="size-18 me-1 align-middle"></i> TOP UP / REFILL PASS
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-7">
+                        <div class="dash-card h-100">
+                            <h4 class="dash-card-title mb-3">Session Usage History</h4>
+                            <div class="table-responsive">
+                                <table class="table table-hover align-middle">
+                                    <thead class="bg-light">
+                                        <tr class="small text-muted">
+                                            <th>DATE</th>
+                                            <th>SESSION</th>
+                                            <th>GUIDE</th>
+                                            <th>STATUS</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="small fw-semibold">Sep 18, 2026</td>
+                                            <td>Kitten Vinyasa Flow</td>
+                                            <td class="text-muted small">Maya Chen</td>
+                                            <td><span class="badge bg-success text-white px-2 py-1">Completed</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="small fw-semibold">Sep 10, 2026</td>
+                                            <td>Gentle Purr Restorative</td>
+                                            <td class="text-muted small">Sara Jenkins</td>
+                                            <td><span class="badge bg-success text-white px-2 py-1">Completed</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="small fw-semibold">Sep 01, 2026</td>
+                                            <td>5-Class Pass Activated</td>
+                                            <td class="text-muted small">Studio Store</td>
+                                            <td><span class="badge bg-info text-white px-2 py-1">+5 Credits</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 4: SPECIAL EVENTS & CALENDAR -->
+            <div id="events" class="tab-content">
+                <div class="dash-card">
+                    <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
+                        <div>
+                            <h4 class="dash-card-title mb-1">Upcoming Special Event Schedules</h4>
+                            <p class="text-muted small mb-0">Exclusive weekend workshops, kitten social hours, and restorative sound baths.</p>
+                        </div>
+                        <span class="badge bg-light text-primary-custom px-3 py-2 rounded-pill fw-bold">Guest Priority RSVP Active</span>
+                    </div>
+
+                    <div class="row g-4 justify-content-center">
+                        <div class="col-lg-4 col-md-6">
+                            <div class="p-4 bg-light rounded-4 h-100 d-flex flex-column border">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="badge bg-secondary-custom text-white">Oct 14, 2026</span>
+                                    <small class="text-muted">7:00 PM</small>
+                                </div>
+                                <h5 class="fw-bold mb-2">Full Moon Purr Meditation</h5>
+                                <p class="text-muted small mb-3">Immersive Tibetan singing bowls with guided somatic breathwork and calm resting foster cats.</p>
+                                <div class="mt-auto pt-3 border-top d-flex justify-content-between align-items-center">
+                                    <span class="small text-muted">4 Spots Left</span>
+                                    <button class="btn btn-primary btn-sm py-2 px-3 rounded-pill" onclick="alert('RSVP Confirmed for Full Moon Purr Meditation!')">RSVP Spot</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6">
+                            <div class="p-4 bg-light rounded-4 h-100 d-flex flex-column border">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="badge bg-secondary-custom text-white">Oct 22, 2026</span>
+                                    <small class="text-muted">3:00 PM</small>
+                                </div>
+                                <h5 class="fw-bold mb-2">Kitten Social Hour &amp; Tea</h5>
+                                <p class="text-muted small mb-3">A relaxed afternoon with foster litters, herbal botanical tea pairings, and gentle stretches.</p>
+                                <div class="mt-auto pt-3 border-top d-flex justify-content-between align-items-center">
+                                    <span class="small text-muted">6 Spots Left</span>
+                                    <button class="btn btn-primary btn-sm py-2 px-3 rounded-pill" onclick="alert('RSVP Confirmed for Kitten Social Hour!')">RSVP Spot</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-6">
+                            <div class="p-4 bg-light rounded-4 h-100 d-flex flex-column border">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <span class="badge bg-secondary-custom text-white">Nov 02, 2026</span>
+                                    <small class="text-muted">11:00 AM</small>
+                                </div>
+                                <h5 class="fw-bold mb-2">Adoption Mixer &amp; Gentle Flow</h5>
+                                <p class="text-muted small mb-3">Meet adoptable foster cats and learn about foster-to-adopt journeys.</p>
+                                <div class="mt-auto pt-3 border-top d-flex justify-content-between align-items-center">
+                                    <span class="small text-muted">Free with Pass</span>
+                                    <button class="btn btn-primary btn-sm py-2 px-3 rounded-pill" onclick="alert('RSVP Confirmed for Adoption Mixer!')">RSVP Spot</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 5: WELLNESS WAIVER & CARE -->
+            <div id="waiver-reminders" class="tab-content">
+                <div class="row g-4">
+                    <div class="col-lg-6">
+                        <div class="dash-card h-100">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h4 class="dash-card-title mb-0">Safety &amp; Cuddle Waiver</h4>
+                                <span class="badge bg-success-subtle text-success px-3 py-1 rounded-pill fw-bold">SIGNED &bull; ACTIVE</span>
+                            </div>
+                            <p class="text-muted small mb-4">Digital Animal Welfare &amp; Studio Participation Release signed on Sep 01, 2026.</p>
+
+                            <div class="p-3 bg-light rounded-3 mb-3">
+                                <h6 class="fw-bold mb-1">Key Studio Guidelines:</h6>
+                                <ul class="small text-muted mb-0 ps-3">
+                                    <li>Allow resting cats to approach at their own pace.</li>
+                                    <li>Sanitize hands before &amp; after kitten handling.</li>
+                                    <li>Gentle movements around sleeping or lounging foster cats.</li>
+                                </ul>
+                            </div>
+
+                            <button class="btn btn-outline-primary-custom btn-sm rounded-pill w-100 py-2" onclick="alert('Opening signed PDF waiver record.')">
+                                <i data-lucide="file-check" class="size-16 me-1 align-middle"></i> View Signed Waiver PDF
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="dash-card h-100">
+                            <h4 class="dash-card-title mb-3">Emergency &amp; Care Details</h4>
+                            <div class="mb-3">
+                                <label class="small text-muted fw-bold">REGISTERED GUEST</label>
+                                <div class="fw-bold">Maya Parker (#CY-8492)</div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="small text-muted fw-bold">EMERGENCY CONTACT</label>
+                                <div class="fw-semibold">David Parker &bull; (415) 555-0199</div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="small text-muted fw-bold">ALLERGY / SENSITIVITY NOTES</label>
+                                <div class="text-muted small">Mild dust sensitivity (air purifiers requested in studio bay).</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 6: BILLING & INVOICES -->
+            <div id="billing" class="tab-content">
+                <div class="row g-4">
+                    <div class="col-lg-5">
+                        <div class="dash-card h-100">
+                            <h4 class="dash-card-title mb-3">Saved Payment Methods</h4>
+                            <div class="p-4 bg-light rounded-4 border mb-4">
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <div class="d-flex align-items-center">
+                                        <i class="fa-brands fa-cc-visa text-primary-custom fs-2 me-3"></i>
+                                        <div>
+                                            <div class="fw-bold mb-0">Visa ending in 4242</div>
+                                            <small class="text-muted">Expires 08/28 &bull; Default Card</small>
+                                        </div>
+                                    </div>
+                                    <span class="badge bg-success text-white">Active</span>
+                                </div>
+                                <button class="btn btn-outline-dark btn-sm w-100 py-2 rounded-pill" onclick="alert('Update card details modal.')">Update Card</button>
+                            </div>
+
+                            <h5 class="fw-bold mb-2">Billing Address</h5>
+                            <p class="text-muted small mb-0">Maya Parker<br>123 Paws Way, Apt 4B<br>San Francisco, CA 94107</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-7">
+                        <div class="dash-card h-100">
+                            <h4 class="dash-card-title mb-3">Payment Receipts &amp; Invoices</h4>
+                            <div class="table-responsive">
+                                <table class="table table-hover align-middle">
+                                    <thead class="bg-light">
+                                        <tr class="small text-muted">
+                                            <th>INVOICE ID</th>
+                                            <th>DATE</th>
+                                            <th>DESCRIPTION</th>
+                                            <th>AMOUNT</th>
+                                            <th>RECEIPT</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="small fw-semibold">#INV-2026-891</td>
+                                            <td class="small text-muted">Sep 01, 2026</td>
+                                            <td>5-Class Kitten Flow Pack</td>
+                                            <td class="fw-bold">$125.00</td>
+                                            <td><button class="btn btn-outline-secondary btn-sm py-1 px-2 rounded-pill" onclick="alert('Downloading Invoice #INV-2026-891')"><i data-lucide="download" class="size-14"></i> PDF</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="small fw-semibold">#INV-2026-724</td>
+                                            <td class="small text-muted">Aug 14, 2026</td>
+                                            <td>Single Intro Purr Pass</td>
+                                            <td class="fw-bold">$28.00</td>
+                                            <td><button class="btn btn-outline-secondary btn-sm py-1 px-2 rounded-pill" onclick="alert('Downloading Invoice #INV-2026-724')"><i data-lucide="download" class="size-14"></i> PDF</button></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TAB 7: GUEST PROFILE & SETTINGS -->
+            <div id="profile" class="tab-content">
+                <div class="dash-card">
+                    <h4 class="dash-card-title mb-4">Guest Profile &amp; Preferences</h4>
+                    <form onsubmit="event.preventDefault(); alert('Profile preferences updated successfully!');">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label small fw-bold">FULL NAME</label>
+                                <input type="text" class="form-control py-2" value="Maya Parker">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label small fw-bold">EMAIL ADDRESS</label>
+                                <input type="email" class="form-control py-2" value="guest.maya@wellness.com">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label small fw-bold">PHONE NUMBER</label>
+                                <input type="tel" class="form-control py-2" value="+1 (415) 555-0198">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label small fw-bold">FAVORITE CAT FOSTER BREED / PERSONALITY</label>
+                                <input type="text" class="form-control py-2" value="Calm Tabby &amp; Playful Tuxedo Kittens">
+                            </div>
+                            <div class="col-12 mt-4">
+                                <button type="submit" class="btn btn-primary rounded-pill px-4 py-2 fw-bold">Save Changes</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="assets/js/main.js"></script>
+
+    <!-- Dashboard Interaction Script -->
+    <script>
+        // Tab Titles Mapping
+        const tabTitles = {
+            'overview': 'Welcome message',
+            'bookings': 'Bookings & Session Slots',
+            'pack-usage': 'Class Pack Usage & Credits',
+            'events': 'Special Events & Calendar',
+            'waiver-reminders': 'Wellness Waiver & Guidelines',
+            'billing': 'Billing & Payment Invoices',
+            'profile': 'Guest Profile & Settings'
+        };
+
+        // Switch Tab Function
+        function switchDashboardTab(tabId) {
+            // Hide all tab contents
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            // Remove active from all sidebar links
+            document.querySelectorAll('.sidebar-link').forEach(link => {
+                link.classList.remove('active');
+            });
+
+            // Activate target tab content
+            const targetContent = document.getElementById(tabId);
+            if (targetContent) {
+                targetContent.classList.add('active');
+            }
+
+            // Activate target sidebar link
+            const targetLink = document.querySelector(`.sidebar-link[data-tab="${tabId}"]`);
+            if (targetLink) {
+                targetLink.classList.add('active');
+            }
+
+            // Update Header Title
+            const titleElement = document.getElementById('dashHeaderTitle');
+            if (titleElement && tabTitles[tabId]) {
+                titleElement.textContent = tabTitles[tabId];
+            }
+
+            // Close mobile sidebar if open
+            closeSidebar();
+        }
+
+        // Attach click listeners to sidebar links
+        document.querySelectorAll('.sidebar-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const tabId = this.getAttribute('data-tab');
+                if (tabId) {
+                    switchDashboardTab(tabId);
+                }
+            });
+        });
+
+        // Mobile Sidebar Controls
+        const sidebar = document.getElementById('dashboardSidebar');
+        const backdrop = document.getElementById('sidebarBackdrop');
+        const sidebarToggleBtn = document.getElementById('sidebarToggleBtn');
+        const sidebarCloseBtn = document.getElementById('sidebarCloseBtn');
+
+        function openSidebar() {
+            if (sidebar) sidebar.classList.add('show');
+            if (backdrop) backdrop.classList.add('show');
+        }
+
+        function closeSidebar() {
+            if (sidebar) sidebar.classList.remove('show');
+            if (backdrop) backdrop.classList.remove('show');
+        }
+
+        if (sidebarToggleBtn) sidebarToggleBtn.addEventListener('click', openSidebar);
+        if (sidebarCloseBtn) sidebarCloseBtn.addEventListener('click', closeSidebar);
+        if (backdrop) backdrop.addEventListener('click', closeSidebar);
+
+
+        // Handle Slot Booking Form Submission
+        function handleSlotBooking(e) {
+            e.preventDefault();
+            const alertBox = document.getElementById('bookingSuccessAlert');
+            if (alertBox) {
+                alertBox.classList.remove('d-none');
+                setTimeout(() => {
+                    alertBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }, 100);
+            }
+        }
+    </script>
+</body>
+
+</html>

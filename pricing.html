@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing &amp; Class Packs | Cat Yoga &amp; Animal Wellness Studio</title>
+    <meta name="description" content="Explore single drop-in passes, 5-class kitten flow packs, and unlimited feline wellness memberships. 10% of proceeds support animal rescue care.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+
+    <!-- Font Awesome for Social Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .pricing-card {
+            transition: var(--transition-base);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 5;
+            white-space: nowrap;
+            font-size: 0.75rem;
+            letter-spacing: 1.5px;
+            padding: 0.4rem 1.25rem;
+            border-radius: 50px;
+            box-shadow: 0 4px 12px rgba(224, 122, 95, 0.35);
+            line-height: 1;
+        }
+
+        .accordion-button:not(.collapsed) {
+            background-color: var(--secondary-color);
+            color: #FFFFFF;
+        }
+
+        .btn-outline-primary-custom {
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            box-shadow: none;
+        }
+
+        .btn-outline-primary-custom:hover {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            border-color: var(--primary-color);
+            color: #FFFFFF;
+            box-shadow: 0 8px 25px rgba(77, 139, 117, 0.4);
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header / Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <i data-lucide="cat" class="me-2 text-primary-custom"></i>
+                PAWZEN
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <!-- Home Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Home</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="index.html">Home 1 (Highlights)</a></li>
+                            <li><a class="dropdown-item" href="home-2.html">Home 2 (Sanctuary)</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Classes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Adoptions</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="pricing.html">Pricing</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+                </ul>
+                <div class="d-flex align-items-center">
+                    <button id="theme-toggle" class="btn btn-link" title="Toggle Theme">
+                        <i data-lucide="moon"></i>
+                    </button>
+                    <button id="rtl-toggle" class="btn btn-link" title="Toggle RTL">
+                        <i data-lucide="arrow-left-right"></i>
+                    </button>
+
+                    <a href="login.html" class="btn btn-primary ms-2">Login</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header" style="background-image: linear-gradient(135deg, rgba(15, 23, 19, 0.88) 0%, rgba(15, 23, 19, 0.7) 50%, rgba(15, 23, 19, 0.55) 100%), url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
+        <div class="container text-center text-white">
+            <h1 class="display-3 fw-bold tracking-widest text-white">PRICING &amp; PASSES</h1>
+            <p class="lead text-white opacity-90">Invest in your mindful wellness and companion animal rescue. Choose a pass that fits your flow.</p>
+        </div>
+    </header>
+
+    <!-- Pricing Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="row g-4 align-items-stretch">
+                <!-- Single Drop-In -->
+                <div class="col-lg-4 animate-on-scroll">
+                    <div class="glass-card pricing-card h-100 p-5 text-center border-0 shadow-sm rounded-4">
+                        <h4 class="mb-4 text-primary-custom tracking-widest">SINGLE SESSION</h4>
+                        <div class="display-4 fw-bold mb-3">$28</div>
+                        <p class="text-muted mb-5 small">Ideal for first-time visitors and casual cat lovers trying out a class.</p>
+                        <ul class="list-unstyled mb-5 text-start mx-auto d-inline-block">
+                            <li class="mb-3 d-flex align-items-center"><i data-lucide="check"
+                                    class="text-success me-3"></i> <span>1 Cat Yoga / Sound Session</span></li>
+                            <li class="mb-3 d-flex align-items-center"><i data-lucide="check"
+                                    class="text-success me-3"></i> <span>Free cork mat &amp; props</span></li>
+                            <li class="mb-3 d-flex align-items-center"><i data-lucide="check"
+                                    class="text-success me-3"></i> <span>Organic herbal tea lounge</span></li>
+                            <li class="mb-3 d-flex align-items-center"><i data-lucide="check"
+                                    class="text-success me-3"></i> <span>10% shelter donation included</span></li>
+                        </ul>
+                        <a href="register.html" class="btn btn-outline-primary-custom w-100 mt-auto py-3">GET SINGLE PASS</a>
+                    </div>
+                </div>
+
+                <!-- 5-Class Pack (Most Popular) -->
+                <div class="col-lg-4 animate-on-scroll">
+                    <div
+                        class="glass-card pricing-card h-100 p-5 text-center border-0 position-relative shadow-lg rounded-4 bg-white">
+                        <div class="popular-badge bg-secondary-custom text-white fw-bold text-uppercase">
+                            MOST POPULAR PACK</div>
+                        <h4 class="mb-4 text-primary-custom tracking-widest">5-CLASS PACK</h4>
+                        <div class="display-4 fw-bold mb-3">$125</div>
+                        <p class="text-muted mb-5 small">Save $15 with flexible slot booking and 6-month validity.</p>
+                        <ul class="list-unstyled mb-5 text-start mx-auto d-inline-block">
+                            <li class="mb-3 d-flex align-items-center"><i data-lucide="check"
+                                    class="text-success me-3"></i> <span>5 Cat Yoga / Sound Sessions</span></li>
+                            <li class="mb-3 d-flex align-items-center"><i data-lucide="check"
+                                    class="text-success me-3"></i> <span>Track usage in Guest Dashboard</span></li>
+                            <li class="mb-3 d-flex align-items-center"><i data-lucide="check"
+                                    class="text-success me-3"></i> <span>Priority weekend slot booking</span></li>
+                            <li class="mb-3 d-flex align-items-center"><i data-lucide="check"
+                                    class="text-success me-3"></i> <span>10% off special kitten workshops</span></li>
+                        </ul>
+                        <a href="register.html" class="btn btn-primary w-100 mt-auto py-3">PURCHASE 5-PACK</a>
+                    </div>
+                </div>
+
+                <!-- Unlimited Membership -->
+                <div class="col-lg-4 animate-on-scroll">
+                    <div class="glass-card pricing-card h-100 p-5 text-center border-0 shadow-sm rounded-4">
+                        <h4 class="mb-4 text-primary-custom tracking-widest">UNLIMITED PURR</h4>
+                        <div class="display-4 fw-bold mb-3">$175<span class="fs-6 fw-normal text-muted">/mo</span></div>
+                        <p class="text-muted mb-5 small">For dedicated cat yogis and wellness sanctuary members.</p>
+                        <ul class="list-unstyled mb-5 text-start mx-auto d-inline-block">
+                            <li class="mb-3 d-flex align-items-center"><i data-lucide="check"
+                                    class="text-success me-3"></i> <span>Unlimited monthly yoga &amp; sound</span></li>
+                            <li class="mb-3 d-flex align-items-center"><i data-lucide="check"
+                                    class="text-success me-3"></i> <span>1 Free Guest Pass every month</span></li>
+                            <li class="mb-3 d-flex align-items-center"><i data-lucide="check"
+                                    class="text-success me-3"></i> <span>15% off shelter adoption fees</span></li>
+                            <li class="mb-3 d-flex align-items-center"><i data-lucide="check"
+                                    class="text-success me-3"></i> <span>Direct animal rescue sponsorship</span></li>
+                        </ul>
+                        <a href="register.html" class="btn btn-outline-primary-custom w-100 mt-auto py-3">JOIN UNLIMITED</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Membership Perks -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="text-center mb-5 animate-on-scroll">
+                <h2 class="display-5 fw-bold tracking-widest uppercase">GUEST PERKS &amp; CARE</h2>
+                <p class="text-muted">Every pass includes thoughtful amenities for you and utmost safety for our cats.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4 animate-on-scroll">
+                    <div class="p-4 bg-white rounded-4 shadow-sm h-100 text-center">
+                        <div class="text-primary-custom mb-3"><i data-lucide="coffee" class="size-32 mx-auto"></i></div>
+                        <h5 class="fw-bold mb-3 tracking-widest">ORGANIC TEA BAR</h5>
+                        <p class="text-muted small">Enjoy complimentary hot calming teas and botanical elixirs before or after every session.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 animate-on-scroll">
+                    <div class="p-4 bg-white rounded-4 shadow-sm h-100 text-center">
+                        <div class="text-primary-custom mb-3"><i data-lucide="calendar" class="size-32 mx-auto"></i></div>
+                        <h5 class="fw-bold mb-3 tracking-widest">PRIORITY SLOT PICKER</h5>
+                        <p class="text-muted small">Reserve your favorite morning or evening slot in advance through your seamless guest dashboard.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 animate-on-scroll">
+                    <div class="p-4 bg-white rounded-4 shadow-sm h-100 text-center">
+                        <div class="text-primary-custom mb-3"><i data-lucide="heart" class="size-32 mx-auto"></i></div>
+                        <h5 class="fw-bold mb-3 tracking-widest">SHELTER RESCUE FUND</h5>
+                        <p class="text-muted small">10% of every dollar spent directly provides vet care, vaccines, and food for foster cats.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="text-center mb-5 animate-on-scroll">
+                <h2 class="display-5 fw-bold tracking-widest uppercase">FREQUENTLY ASKED QUESTIONS</h2>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion accordion-flush" id="faqAccordion">
+                        <div class="accordion-item border-bottom animate-on-scroll">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed py-4 fw-bold tracking-widest text-uppercase"
+                                    style="font-size: 0.9rem;" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq1">
+                                    How long are class packs valid for?
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted py-4">
+                                    Our 5-Class Packs are valid for 6 full months from the date of purchase. You can easily monitor your remaining session credits in your Guest Dashboard.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item border-bottom animate-on-scroll">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed py-4 fw-bold tracking-widest text-uppercase"
+                                    style="font-size: 0.9rem;" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq2">
+                                    What is the cancellation or rescheduling policy?
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted py-4">
+                                    To allow other guests and foster animals to prepare, we ask for at least 4 hours' notice to reschedule or cancel a booked session slot with zero penalty.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item border-bottom animate-on-scroll">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed py-4 fw-bold tracking-widest text-uppercase"
+                                    style="font-size: 0.9rem;" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#faq3">
+                                    Are yoga mats and props provided?
+                                </button>
+                            </h2>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted py-4">
+                                    Yes! We provide eco-friendly, sanitized cork mats, organic cotton bolsters, and cat-safe blankets free of charge with all passes.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer section-padding pb-4">
+        <div class="container">
+            <div class="row g-5 text-start">
+                <div class="col-lg-4">
+                    <a class="navbar-brand mb-4 d-block" href="index.html">
+                        <i data-lucide="cat" class="me-2 text-primary-custom"></i>
+                        PAWZEN
+                    </a>
+                    <p class="text-light-50 mb-4">A tranquil urban sanctuary uniting somatic yoga movement, animal-assisted wellness, and compassionate feline rescue partnerships.</p>
+                    <div class="d-flex gap-3 social-links">
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="mb-4">QUICK LINKS</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="about.html" class="text-light-50 text-decoration-none">About Us</a></li>
+                        <li class="mb-2"><a href="services.html" class="text-light-50 text-decoration-none">Classes by Type</a></li>
+                        <li class="mb-2"><a href="gallery.html" class="text-light-50 text-decoration-none">Adoption Partners</a></li>
+                        <li class="mb-2"><a href="pricing.html" class="text-light-50 text-decoration-none">Pricing &amp; Packs</a></li>
+                        <li class="mb-2"><a href="login.html" class="text-light-50 text-decoration-none">Guest Dashboard</a></li>
+                        <li class="mb-2"><a href="contact.html" class="text-light-50 text-decoration-none">Contact Studio</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h5 class="mb-4">STUDIO HOURS</h5>
+                    <ul class="list-unstyled text-light-50">
+                        <li class="mb-2">Mon - Fri: 7:00 AM - 9:00 PM</li>
+                        <li class="mb-2">Sat: 8:00 AM - 8:00 PM</li>
+                        <li class="mb-2">Sun: 8:00 AM - 7:00 PM</li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h5 class="mb-4">NEWSLETTER</h5>
+                    <p class="text-light-50 mb-3">Get notifications for new foster kitten litters and sound bath events.</p>
+                    <div class="input-group">
+                        <input type="email" class="form-control" placeholder="Email Address">
+                        <button class="btn btn-primary">SUBMIT</button>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-5 opacity-25">
+            <div class="text-center text-light-50 small">
+                <p>&copy; 2026 Cat Yoga &amp; Animal Wellness Studio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

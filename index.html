@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat Yoga & Animal Wellness Studio | Mindful Movement & Feline Healing</title>
+    <meta name="description"
+        content="Experience calming cat yoga, animal wellness therapy, sound baths, and adoptable kitten socialization in our serene, playful sanctuary. Book your session today.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- JSON-LD Local Business Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HealthAndBeautyBusiness",
+      "name": "Cat Yoga & Animal Wellness Studio",
+      "image": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "123 Paws & Lotus Way",
+        "addressLocality": "San Francisco",
+        "addressRegion": "CA",
+        "postalCode": "94107",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 37.774929,
+        "longitude": -122.419416
+      },
+      "url": "https://catyogawellness.com",
+      "telephone": "+14155550198",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "07:00",
+          "closes": "21:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Saturday", "Sunday"],
+          "opens": "08:00",
+          "closes": "20:00"
+        }
+      ]
+    }
+    </script>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>
+</head>
+
+<body>
+
+    <!-- Header / Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <i data-lucide="cat" class="me-2 text-primary-custom"></i>
+                PAWZEN
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <!-- Home Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" role="button"
+                            data-bs-toggle="dropdown">Home</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item active" href="index.html">Home 1 (Highlights)</a></li>
+                            <li><a class="dropdown-item" href="home-2.html">Home 2 (Sanctuary)</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Classes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Adoptions</a></li>
+                    <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+                </ul>
+                <div class="d-flex align-items-center">
+                    <!-- Theme & RTL Toggles -->
+                    <button id="theme-toggle" class="btn btn-link" title="Toggle Theme">
+                        <i data-lucide="moon"></i>
+                    </button>
+                    <button id="rtl-toggle" class="btn btn-link" title="Toggle RTL">
+                        <i data-lucide="arrow-left-right"></i>
+                    </button>
+
+                    <a href="login.html" class="btn btn-primary ms-2">Login</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section grid-pattern"
+        style="background-image: url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <div class="row justify-content-center text-center">
+                <div class="col-lg-10 animate-on-scroll">
+                    <span class="badge bg-white text-primary-custom px-4 py-2 rounded-pill fw-semibold mb-3 shadow-sm text-uppercase tracking-wider">
+                        <i data-lucide="sparkles" class="size-16 me-1 align-middle"></i> Playful Movement & Animal Wellness
+                    </span>
+                    <h1 class="display-1 fw-bold mb-4">PURR, STRETCH <br><span class="text-secondary-custom">&amp; HEAL</span> TOGETHER</h1>
+                    <p class="lead mb-5 fs-4 opacity-90">Experience the therapeutic joy of mindful cat yoga, restorative feline sound baths, and foster kitten socialization in our calming sanctuary.</p>
+                    <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center align-items-center">
+                        <a href="pricing.html" class="btn btn-primary btn-hero">Explore Class Passes</a>
+                        <a href="services.html" class="btn btn-outline-light btn-hero">Our Classes by Type</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Membership CTA Section -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0 animate-on-scroll">
+                    <h2 class="display-4 section-title text-start">START YOUR PURR JOURNEY</h2>
+                    <p class="text-muted mb-4 fs-5">Whether you are looking for joyful kitten playtime flow, deep restorative meditation, or calming animal therapy, we offer a peaceful haven for mind, body, and spirit.</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-3 d-flex align-items-center"><i data-lucide="check-circle"
+                                class="text-primary-custom me-3"></i> <span>Over 35+ weekly cat yoga, sound bath &amp; stretch sessions</span></li>
+                        <li class="mb-3 d-flex align-items-center"><i data-lucide="check-circle"
+                                class="text-primary-custom me-3"></i> <span>100% partnered with local rescue shelters &amp; adoption hubs</span>
+                        </li>
+                        <li class="mb-3 d-flex align-items-center"><i data-lucide="check-circle"
+                                class="text-primary-custom me-3"></i> <span>Sanitized mats, feline pheromone calmers &amp; organic herbal tea</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-6">
+                    <div class="glass-card p-5 animate-on-scroll">
+                        <h3 class="mb-3 fw-bold">Guest Quick Check-In</h3>
+                        <p class="text-muted small mb-4">Enter your guest email or member ID to quickly confirm your mat reservation.</p>
+                        <form onsubmit="event.preventDefault(); window.location.href='login.html';">
+                            <div class="mb-4">
+                                <input type="text" class="form-control border-0 bg-white p-3 shadow-sm rounded-pill"
+                                    placeholder="Guest Email or Pass ID">
+                            </div>
+                            <button class="btn btn-primary w-100 py-3">CHECK-IN TO SESSION</button>
+                            <p class="text-center mt-4 small text-muted">First time visiting our studio? <a href="register.html"
+                                    class="text-secondary-custom fw-bold">Sign digital feline waiver</a></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Class Highlights -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="text-center mb-5 animate-on-scroll">
+                <h2 class="display-4 section-title">CLASS EXPERIENCES</h2>
+                <div class="text-secondary-custom fw-bold fs-5 tracking-widest mt-3">CURATED FELINE WELLNESS HIGHLIGHTS</div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 animate-on-scroll">
+                    <div class="climb-card h-100">
+                        <img src="https://images.unsplash.com/photo-1548802673-380ab8ebc7b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            class="card-img-top" alt="Kitten Vinyasa Flow">
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="badge bg-light text-primary-custom fw-bold px-3 py-2 rounded-pill">Playful &amp; Energizing</span>
+                                <small class="text-muted">60 Mins</small>
+                            </div>
+                            <h4 class="card-title fw-bold">KITTEN VINYASA FLOW</h4>
+                            <p class="card-text text-muted">A playful, feel-good flow surrounded by energetic foster kittens climbing, chasing toys, and napping by your mat.</p>
+                            <a href="services.html" class="text-secondary-custom fw-bold small text-decoration-none">Explore Class &amp; Book &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 animate-on-scroll">
+                    <div class="climb-card h-100">
+                        <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            class="card-img-top" alt="Gentle Purr Restorative">
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="badge bg-light text-primary-custom fw-bold px-3 py-2 rounded-pill">Calm &amp; Soothing</span>
+                                <small class="text-muted">75 Mins</small>
+                            </div>
+                            <h4 class="card-title fw-bold">GENTLE PURR RESTORATIVE</h4>
+                            <p class="card-text text-muted">Deep, supported floor stretches and gentle restorative poses while calm adult therapy cats settle on your lap and bolster.</p>
+                            <a href="services.html" class="text-secondary-custom fw-bold small text-decoration-none">Explore Class &amp; Book &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 animate-on-scroll">
+                    <div class="climb-card h-100">
+                        <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            class="card-img-top" alt="Feline Sound Bath">
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <span class="badge bg-light text-primary-custom fw-bold px-3 py-2 rounded-pill">Deep Sound Healing</span>
+                                <small class="text-muted">60 Mins</small>
+                            </div>
+                            <h4 class="card-title fw-bold">SOUND BATH &amp; MEOWITATION</h4>
+                            <p class="card-text text-muted">Immersive crystal singing bowls, guided breathwork, and healing vibrational purr frequencies for ultimate nervous system rest.</p>
+                            <a href="services.html" class="text-secondary-custom fw-bold small text-decoration-none">Explore Class &amp; Book &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Yoga Section -->
+    <section class="section-padding bg-light grid-pattern">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0 animate-on-scroll">
+                    <div class="position-relative">
+                        <img src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                            class="img-fluid rounded-4 shadow-premium" alt="Cat in Yoga Studio">
+                        <div class="position-absolute bottom-0 end-0 glass-card p-4 rounded-end-0 shadow">
+                            <h4 class="mb-0 text-primary-custom fw-bold">DAILY PURR SESSIONS</h4>
+                            <p class="mb-0 text-muted">7:00 AM - 8:30 PM Daily</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 ps-lg-5 animate-on-scroll">
+                    <h2 class="display-4 section-title text-start">FLOW WITH INTENTION &amp; PURRS</h2>
+                    <p class="lead text-muted mb-4">Our studio sessions are designed in collaboration with certified animal behaviorists. Cat purrs vibrate at 20-140 Hz—a therapeutic frequency scientifically proven to lower stress, lower blood pressure, and elevate mood.</p>
+                    <div class="row g-4 mb-5">
+                        <div class="col-sm-6">
+                            <div class="d-flex align-items-center">
+                                <div class="bg-white p-2 rounded-circle shadow-sm me-3">
+                                    <i data-lucide="flower" class="text-secondary-custom"></i>
+                                </div>
+                                <span class="fw-bold text-uppercase tracking-wider">Vinyasa &amp; Purrs</span>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="d-flex align-items-center">
+                                <div class="bg-white p-2 rounded-circle shadow-sm me-3">
+                                    <i data-lucide="wind" class="text-secondary-custom"></i>
+                                </div>
+                                <span class="fw-bold text-uppercase tracking-wider">Gentle Restorative</span>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="d-flex align-items-center">
+                                <div class="bg-white p-2 rounded-circle shadow-sm me-3">
+                                    <i data-lucide="sparkles" class="text-secondary-custom"></i>
+                                </div>
+                                <span class="fw-bold text-uppercase tracking-wider">Sound Therapy</span>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="d-flex align-items-center">
+                                <div class="bg-white p-2 rounded-circle shadow-sm me-3">
+                                    <i data-lucide="heart" class="text-secondary-custom"></i>
+                                </div>
+                                <span class="fw-bold text-uppercase tracking-wider">Kitten Socials</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="services.html" class="btn btn-secondary">View Schedule &amp; Classes</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instructors / Coaches Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="text-center mb-5 animate-on-scroll">
+                <h2 class="display-4 section-title">MEET THE <span class="text-primary-custom">SPECIALISTS</span></h2>
+                <p class="text-muted fs-5">Compassionate yoga instructors and certified animal welfare professionals.</p>
+            </div>
+            <div class="row g-5 justify-content-center">
+                <div class="col-lg-3 col-md-6 animate-on-scroll">
+                    <div class="glass-card text-center p-4 h-100">
+                        <div class="overflow-hidden rounded-circle mb-4 shadow-premium mx-auto"
+                            style="width: 140px; height: 140px;">
+                            <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                                class="img-fluid w-100 h-100" style="object-fit: cover;"
+                                alt="Maya Chen - Lead Yoga Director">
+                        </div>
+                        <h5 class="mb-1 fw-bold">MAYA CHEN</h5>
+                        <p class="text-secondary-custom small fw-bold tracking-widest mb-2">Lead Yoga Director</p>
+                        <p class="text-muted small mb-0">500-hour certified yoga master with 8+ years guiding somatic flows and animal-assisted wellness.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 animate-on-scroll">
+                    <div class="glass-card text-center p-4 h-100">
+                        <div class="overflow-hidden rounded-circle mb-4 shadow-premium mx-auto"
+                            style="width: 140px; height: 140px;">
+                            <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                                class="img-fluid w-100 h-100" style="object-fit: cover;"
+                                alt="Dr. Elena Ramos - Animal Behavior Specialist">
+                        </div>
+                        <h5 class="mb-1 fw-bold">DR. ELENA RAMOS</h5>
+                        <p class="text-secondary-custom small fw-bold tracking-widest mb-2">Animal Welfare Lead</p>
+                        <p class="text-muted small mb-0">Veterinary behavior specialist ensuring all rescue cats feel safe, loved, and enriched.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 animate-on-scroll">
+                    <div class="glass-card text-center p-4 h-100">
+                        <div class="overflow-hidden rounded-circle mb-4 shadow-premium mx-auto"
+                            style="width: 140px; height: 140px;">
+                            <img src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                                class="img-fluid w-100 h-100" style="object-fit: cover;"
+                                alt="Leo Carter - Sound Healer">
+                        </div>
+                        <h5 class="mb-1 fw-bold">LEO CARTER</h5>
+                        <p class="text-secondary-custom small fw-bold tracking-widest mb-2">Sound Bath &amp; Breathwork</p>
+                        <p class="text-muted small mb-0">Sound therapist blending crystal singing bowl resonances with meditative feline purr harmony.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 animate-on-scroll">
+                    <div class="glass-card text-center p-4 h-100">
+                        <div class="overflow-hidden rounded-circle mb-4 shadow-premium mx-auto"
+                            style="width: 140px; height: 140px;">
+                            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                                class="img-fluid w-100 h-100" style="object-fit: cover;"
+                                alt="Sara Jenkins - Adoption & Restorative Guide">
+                        </div>
+                        <h5 class="mb-1 fw-bold">SARA JENKINS</h5>
+                        <p class="text-secondary-custom small fw-bold tracking-widest mb-2">Restorative &amp; Adoptions</p>
+                        <p class="text-muted small mb-0">Gentle yoga guide and shelter coordinator who has helped place over 300+ rescue cats in forever homes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section-padding bg-dark text-white">
+        <div class="container">
+            <div class="text-center mb-5 animate-on-scroll">
+                <h2 class="display-4 section-title text-white">WHAT OUR <span class="text-secondary-custom">GUESTS SAY</span></h2>
+                <p class="text-light opacity-75 fs-5">Heartwarming experiences from our cat yoga and wellness sanctuary.</p>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-4 animate-on-scroll">
+                    <div class="glass-card p-4 h-100 border border-white border-opacity-10">
+                        <div class="d-flex mb-3">
+                            <i class="fa-solid fa-star text-secondary-custom me-1"></i>
+                            <i class="fa-solid fa-star text-secondary-custom me-1"></i>
+                            <i class="fa-solid fa-star text-secondary-custom me-1"></i>
+                            <i class="fa-solid fa-star text-secondary-custom me-1"></i>
+                            <i class="fa-solid fa-star text-secondary-custom"></i>
+                        </div>
+                        <p class="mb-4 text-dark">"The most therapeutic hour of my week. Having a purring foster kitten curl up on my back during child's pose washed away all my stress."</p>
+                        <div class="d-flex align-items-center">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+                                class="rounded-circle me-3" width="48" height="48" style="object-fit: cover;"
+                                alt="Sarah M.">
+                            <div>
+                                <div class="fw-bold text-dark">Sarah M.</div>
+                                <div class="text-secondary-custom small">Regular Guest &bull; 6 Months</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 animate-on-scroll">
+                    <div class="glass-card p-4 h-100 border border-white border-opacity-10">
+                        <div class="d-flex mb-3">
+                            <i class="fa-solid fa-star text-secondary-custom me-1"></i>
+                            <i class="fa-solid fa-star text-secondary-custom me-1"></i>
+                            <i class="fa-solid fa-star text-secondary-custom me-1"></i>
+                            <i class="fa-solid fa-star text-secondary-custom me-1"></i>
+                            <i class="fa-solid fa-star text-secondary-custom"></i>
+                        </div>
+                        <p class="mb-4 text-dark">"I came for the yoga and fell in love with a gentle ginger cat named Mochi. We adopted him three weeks later! The studio is clean, calm, and uplifting."</p>
+                        <div class="d-flex align-items-center">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+                                class="rounded-circle me-3" width="48" height="48" style="object-fit: cover;"
+                                alt="David K.">
+                            <div>
+                                <div class="fw-bold text-dark">David K.</div>
+                                <div class="text-secondary-custom small">Cat Parent &amp; Member</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 animate-on-scroll">
+                    <div class="glass-card p-4 h-100 border border-white border-opacity-10">
+                        <div class="d-flex mb-3">
+                            <i class="fa-solid fa-star text-secondary-custom me-1"></i>
+                            <i class="fa-solid fa-star text-secondary-custom me-1"></i>
+                            <i class="fa-solid fa-star text-secondary-custom me-1"></i>
+                            <i class="fa-solid fa-star text-secondary-custom me-1"></i>
+                            <i class="fa-solid fa-star text-secondary-custom"></i>
+                        </div>
+                        <p class="mb-4 text-dark">"Leo's Sound Bath &amp; Meowitation is magical. The singing bowls and purring cats nearby create the deepest relaxation I've ever felt."</p>
+                        <div class="d-flex align-items-center">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+                                class="rounded-circle me-3" width="48" height="48" style="object-fit: cover;"
+                                alt="Priya R.">
+                            <div>
+                                <div class="fw-bold text-dark">Priya R.</div>
+                                <div class="text-secondary-custom small">Sound Bath Enthusiast</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action / Free Pass Section -->
+    <section id="cta-section" class="section-padding">
+        <div class="container">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-lg-6 mb-4 mb-lg-0 animate-on-scroll">
+                    <h2 class="display-4 fw-bold mb-3">READY TO <span class="text-secondary-custom">UNWIND &amp; PURR?</span></h2>
+                    <p class="lead opacity-75 mb-0">Join thousands of mindful yogis and cat lovers who have found peace, laughter, and companion animals in our studio. Book your first session today.</p>
+                </div>
+                <div class="col-lg-5 animate-on-scroll">
+                    <div class="glass-card p-4 rounded-4 cta-form-card">
+                        <h5 class="fw-bold mb-3 text-dark">RESERVE YOUR CLASS SLOT</h5>
+                        <form onsubmit="event.preventDefault(); window.location.href='login.html';">
+                            <div class="mb-3">
+                                <input type="text" class="form-control py-3 rounded-3 border-0"
+                                    placeholder="Your Full Name" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="email" class="form-control py-3 rounded-3 border-0"
+                                    placeholder="Your Email Address" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100 py-3 fw-bold">CLAIM INTRO SESSION PASS</button>
+                            <p class="text-muted small text-center mt-3 mb-0">Includes studio mat, cat treats &amp; herbal tea. 100% stress-free.</p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer section-padding pb-4">
+        <div class="container">
+            <div class="row g-5 text-start">
+                <div class="col-lg-4">
+                    <a class="navbar-brand mb-4 d-block" href="index.html">
+                        <i data-lucide="cat" class="me-2 text-primary-custom"></i>
+                        PAWZEN
+                    </a>
+                    <p class="text-light-50 mb-4">A tranquil urban sanctuary uniting somatic yoga movement, animal-assisted wellness, and compassionate feline rescue partnerships.</p>
+                    <div class="d-flex gap-3 social-links">
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="mb-4">QUICK LINKS</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="about.html" class="text-light-50 text-decoration-none">About Us</a></li>
+                        <li class="mb-2"><a href="services.html" class="text-light-50 text-decoration-none">Classes by Type</a></li>
+                        <li class="mb-2"><a href="gallery.html" class="text-light-50 text-decoration-none">Adoption Partners</a></li>
+                        <li class="mb-2"><a href="pricing.html" class="text-light-50 text-decoration-none">Pricing &amp; Packs</a></li>
+                        <li class="mb-2"><a href="login.html" class="text-light-50 text-decoration-none">Guest Dashboard</a></li>
+                        <li class="mb-2"><a href="contact.html" class="text-light-50 text-decoration-none">Contact Studio</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h5 class="mb-4">STUDIO HOURS</h5>
+                    <ul class="list-unstyled text-light-50">
+                        <li class="mb-2">Mon - Fri: 7:00 AM - 9:00 PM</li>
+                        <li class="mb-2">Sat: 8:00 AM - 8:00 PM</li>
+                        <li class="mb-2">Sun: 8:00 AM - 7:00 PM</li>
+                        <li class="mb-2 text-primary-custom small fw-semibold">Cats Rest Period: 1:00 PM - 2:30 PM</li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h5 class="mb-4">PURR NEWSLETTER</h5>
+                    <p class="text-light-50 mb-3">Get notifications for new foster kitten litters, sound bath events, and workshop schedules.</p>
+                    <div class="input-group">
+                        <input type="email" class="form-control" placeholder="Email Address">
+                        <button class="btn btn-primary">JOIN</button>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-5 opacity-25">
+            <div class="text-center text-light-50 small">
+                <p>&copy; 2026 Cat Yoga &amp; Animal Wellness Studio. All rights reserved. 10% of proceeds aid shelter rescue care.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

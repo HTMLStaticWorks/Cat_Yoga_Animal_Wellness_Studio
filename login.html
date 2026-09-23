@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guest Portal &amp; Dashboard | Cat Yoga &amp; Animal Wellness Studio</title>
+    <meta name="description" content="Guest dashboard for booking class session slots, tracking class pack usage, viewing upcoming special events, and managing payments.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/dark-mode.css">
+    <link rel="stylesheet" href="assets/css/rtl.css">
+
+    <!-- Font Awesome for Social Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            background-color: var(--light-bg);
+            min-height: 100vh;
+            padding-top: 0 !important;
+        }
+
+        .auth-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 15px;
+        }
+
+        .dashboard-container {
+            min-height: 100vh;
+            padding: 40px 15px 80px;
+        }
+
+        .nav-pills .nav-link {
+            border-radius: 50px;
+            padding: 0.6rem 1.5rem;
+            color: var(--text-dark);
+            font-weight: 600;
+            transition: var(--transition-base);
+        }
+
+        .nav-pills .nav-link.active {
+            background-color: var(--primary-color) !important;
+            color: #FFFFFF !important;
+        }
+
+        .stat-badge-pill {
+            background: rgba(77, 139, 117, 0.12);
+            color: var(--primary-color);
+            font-weight: 700;
+            padding: 0.35rem 0.85rem;
+            border-radius: 30px;
+        }
+
+        .progress-bar-purr {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        }
+    </style>
+</head>
+
+<body class="auth-page">
+
+    <!-- Top Floating Toggles -->
+    <div class="position-fixed top-0 end-0 p-3 d-flex gap-2 z-3">
+        <button id="theme-toggle" class="btn btn-white bg-white shadow-sm rounded-circle p-2" title="Toggle Theme">
+            <i data-lucide="moon" class="size-20"></i>
+        </button>
+        <button id="rtl-toggle" class="btn btn-white bg-white shadow-sm rounded-circle p-2" title="Toggle RTL">
+            <i data-lucide="arrow-left-right" class="size-20"></i>
+        </button>
+    </div>
+
+    <!-- VIEW 1: AUTH / LOGIN VIEW -->
+    <div id="auth-view" class="auth-container">
+        <div class="card auth-card animate-on-scroll mx-auto shadow-lg border-0 rounded-4" style="max-width: 460px;">
+            <div class="card-body p-4 p-md-4 text-center">
+                <div class="mb-3">
+                    <a href="index.html" class="navbar-brand text-decoration-none d-inline-flex align-items-center justify-content-center mb-2 fs-4">
+                        <i data-lucide="cat" class="me-2 size-28"></i>
+                        PAWZEN
+                    </a>
+                    <div>
+                        <span class="badge bg-light text-primary-custom px-3 py-1 rounded-pill small fw-semibold">Guest Portal</span>
+                    </div>
+                </div>
+
+                <h2 class="h5 mb-2 fw-bold">WELCOME BACK</h2>
+                <p class="text-muted small mb-3">Sign in to manage your session bookings, track pack usage, and view upcoming events.</p>
+
+                <!-- Login Form -->
+                <form id="login-form" onsubmit="event.preventDefault(); window.location.href='dashboard.html';">
+                    <div class="mb-3 text-start">
+                        <label class="form-label small fw-bold tracking-wider">EMAIL ADDRESS</label>
+                        <input type="email" class="form-control py-2" placeholder="Enter your email address" required>
+                    </div>
+                    <div class="mb-3 text-start">
+                        <label class="form-label small fw-bold tracking-wider">PASSWORD</label>
+                        <div class="password-field-wrapper position-relative">
+                            <input type="password" id="password-input" class="form-control py-2" placeholder="Enter your password" required>
+                            <div class="password-toggle position-absolute top-50 end-0 translate-middle-y pe-3" style="cursor: pointer;" onclick="togglePasswordVisibility('password-input', this)">
+                                <i data-lucide="eye" class="size-18 text-muted"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="remember">
+                            <label class="form-check-label small text-muted" for="remember">Remember me</label>
+                        </div>
+                        <a href="#" class="small text-primary-custom fw-bold">Forgot Password?</a>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary w-100 py-2 mb-4 fw-bold small">SIGN IN TO GUEST PORTAL</button>
+
+                    <div class="d-flex align-items-center mb-4">
+                        <hr class="flex-grow-1">
+                        <span class="px-3 text-muted small tracking-widest">OR CONTINUE WITH</span>
+                        <hr class="flex-grow-1">
+                    </div>
+
+                    <!-- Social Logins -->
+                    <div class="d-flex gap-3 justify-content-center">
+                        <a href="#" class="social-btn btn btn-light rounded-circle shadow-sm p-3" title="Google" onclick="event.preventDefault(); showDashboardView();">
+                            <i class="fa-brands fa-google text-danger"></i>
+                        </a>
+                        <a href="#" class="social-btn btn btn-light rounded-circle shadow-sm p-3" title="Apple" onclick="event.preventDefault(); showDashboardView();">
+                            <i class="fa-brands fa-apple text-dark"></i>
+                        </a>
+                    </div>
+
+                    <p class="mt-4 mb-0 text-muted small">New to our sanctuary? <a href="register.html"
+                            class="text-secondary-custom fw-bold">Create Guest Account &amp; Waiver</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- VIEW 2: GUEST DASHBOARD (Book Slots, Track Packs, Events, Payments) -->
+    <div id="dashboard-view" class="dashboard-container d-none">
+        <div class="container" style="max-width: 1140px; margin-top: 60px;">
+            <!-- Dashboard Header Banner -->
+            <div class="glass-card p-4 p-md-5 rounded-4 mb-4 shadow-sm bg-white border-0 animate-on-scroll">
+                <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3">
+                    <div class="d-flex align-items-center">
+                        <div class="bg-light p-3 rounded-circle me-3 shadow-sm text-primary-custom">
+                            <i data-lucide="cat" class="size-36"></i>
+                        </div>
+                        <div>
+                            <div class="d-flex align-items-center gap-2">
+                                <h2 class="h3 fw-bold mb-0">Welcome back, Maya Parker!</h2>
+                                <span class="badge bg-secondary-custom text-white rounded-pill px-3 py-1 small">Active Guest</span>
+                            </div>
+                            <p class="text-muted mb-0 small mt-1">Guest ID: <strong class="text-dark">#CY-8492</strong> &bull; Member Tier: <strong>5-Class Kitten Flow Pack</strong></p>
+                        </div>
+                    </div>
+                    <div class="d-flex gap-2">
+                        <button class="btn btn-outline-dark btn-sm rounded-pill px-4" onclick="showAuthView()">
+                            <i data-lucide="log-out" class="size-16 me-1 align-middle"></i> Sign Out
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dashboard Navigation Tabs -->
+            <div class="bg-white p-2 rounded-pill shadow-sm mb-4 d-inline-flex flex-wrap gap-1">
+                <ul class="nav nav-pills" id="dashboardTabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="tab-book-btn" data-bs-toggle="pill" data-bs-target="#tab-book" type="button" role="tab">
+                            <i data-lucide="calendar" class="size-16 me-1 align-middle"></i> Book Session Slot
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="tab-pack-btn" data-bs-toggle="pill" data-bs-target="#tab-pack" type="button" role="tab">
+                            <i data-lucide="award" class="size-16 me-1 align-middle"></i> Track Class Pack (3 Left)
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="tab-events-btn" data-bs-toggle="pill" data-bs-target="#tab-events" type="button" role="tab">
+                            <i data-lucide="sparkles" class="size-16 me-1 align-middle"></i> Special Events
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="tab-payments-btn" data-bs-toggle="pill" data-bs-target="#tab-payments" type="button" role="tab">
+                            <i data-lucide="credit-card" class="size-16 me-1 align-middle"></i> Payments &amp; Invoices
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Tab Content -->
+            <div class="tab-content" id="dashboardTabsContent">
+
+                <!-- TAB 1: BOOK CLASS SESSION SLOTS -->
+                <div class="tab-pane fade show active" id="tab-book" role="tabpanel">
+                    <div class="row g-4">
+                        <div class="col-lg-7">
+                            <div class="glass-card p-4 p-md-5 rounded-4 shadow-sm bg-white border-0 h-100">
+                                <h4 class="fw-bold mb-2">Reserve Class Session Slot</h4>
+                                <p class="text-muted small mb-4">Select your preferred date, class type, and cuddle preference to reserve your mat instantly.</p>
+
+                                <div id="booking-alert" class="alert alert-success d-none rounded-3 mb-4" role="alert">
+                                    <i data-lucide="check-circle" class="size-20 me-2 align-middle"></i>
+                                    <strong>Slot Reserved Successfully!</strong> A calendar invite and reminder have been sent to your email.
+                                </div>
+
+                                <form id="book-slot-form" onsubmit="handleSlotBooking(event)">
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <label class="form-label small fw-bold">SELECT DATE</label>
+                                            <input type="date" class="form-control py-2" value="2026-09-26" required>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label small fw-bold">CLASS TYPE</label>
+                                            <select class="form-select py-2" required>
+                                                <option>Kitten Vinyasa Flow (60 Mins)</option>
+                                                <option>Gentle Purr Restorative (75 Mins)</option>
+                                                <option>Sound Bath &amp; Meowitation (60 Mins)</option>
+                                                <option>Senior Cat Gentle Mobility (60 Mins)</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label small fw-bold">TIME SLOT</label>
+                                            <select class="form-select py-2" required>
+                                                <option>Morning Awakening &bull; 08:00 AM</option>
+                                                <option>Mid-Day Restorative &bull; 12:30 PM</option>
+                                                <option>Sunset Feline Flow &bull; 06:00 PM</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label small fw-bold">LEAD INSTRUCTOR</label>
+                                            <select class="form-select py-2">
+                                                <option>Maya Chen (Lead Yoga Master)</option>
+                                                <option>Leo Carter (Sound Bath Guide)</option>
+                                                <option>Sara Jenkins (Restorative Guide)</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-12">
+                                            <label class="form-label small fw-bold">FELINE INTERACTION PREFERENCE</label>
+                                            <select class="form-select py-2">
+                                                <option>High Interaction (Kitten playtime &amp; lap cuddles)</option>
+                                                <option>Calm Restorative (Gentle adult cat presence)</option>
+                                                <option>Quiet Zen Observation (Mindful space)</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-12 mt-4">
+                                            <button type="submit" class="btn btn-primary w-100 py-3 fw-bold">
+                                                <i data-lucide="check-circle" class="size-18 me-1 align-middle"></i> CONFIRM SLOT (USE 1 PACK CREDIT)
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-5">
+                            <div class="glass-card p-4 rounded-4 shadow-sm bg-white border-0 h-100">
+                                <h5 class="fw-bold mb-3">Your Upcoming Bookings</h5>
+                                <div class="list-group list-group-flush gap-3" id="upcoming-bookings-list">
+                                    <div class="p-3 bg-light rounded-3 border-start border-4 border-primary-custom">
+                                        <div class="d-flex justify-content-between align-items-center mb-1">
+                                            <span class="badge bg-primary-custom text-white">Tomorrow</span>
+                                            <small class="text-muted">08:00 AM</small>
+                                        </div>
+                                        <h6 class="fw-bold mb-1">Kitten Vinyasa Flow</h6>
+                                        <p class="text-muted small mb-0"><i data-lucide="user" class="size-14 me-1"></i> Instructor: Maya Chen &bull; Mat #4</p>
+                                    </div>
+
+                                    <div class="p-3 bg-light rounded-3 border-start border-4 border-secondary-custom">
+                                        <div class="d-flex justify-content-between align-items-center mb-1">
+                                            <span class="badge bg-secondary-custom text-white">Sunday</span>
+                                            <small class="text-muted">06:00 PM</small>
+                                        </div>
+                                        <h6 class="fw-bold mb-1">Sound Bath &amp; Meowitation</h6>
+                                        <p class="text-muted small mb-0"><i data-lucide="user" class="size-14 me-1"></i> Instructor: Leo Carter &bull; Mat #9</p>
+                                    </div>
+                                </div>
+
+                                <div class="p-3 mt-4 bg-light rounded-3 text-center">
+                                    <small class="text-muted d-block mb-1">Need to reschedule a slot?</small>
+                                    <small class="text-primary-custom fw-semibold">Reschedule with zero fee up to 4 hours before class.</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB 2: TRACK CLASS PACK USAGE -->
+                <div class="tab-pane fade" id="tab-pack" role="tabpanel">
+                    <div class="row g-4">
+                        <div class="col-lg-5">
+                            <div class="glass-card p-4 p-md-5 rounded-4 shadow-sm bg-white border-0 h-100">
+                                <span class="badge bg-light text-primary-custom px-3 py-1 rounded-pill small fw-bold mb-3">Active Class Pack</span>
+                                <h3 class="fw-bold mb-1">5-Class Kitten Flow Pack</h3>
+                                <p class="text-muted small mb-4">Purchased: Sep 01, 2026 &bull; Valid until: Dec 31, 2026</p>
+
+                                <div class="p-4 bg-light rounded-4 mb-4 text-center">
+                                    <div class="display-3 fw-bold text-primary-custom mb-0">3</div>
+                                    <div class="text-muted small text-uppercase tracking-wider fw-bold">Sessions Remaining</div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <div class="d-flex justify-content-between small text-muted mb-1">
+                                        <span>Pack Usage Progress</span>
+                                        <strong class="text-dark">2 Used / 3 Remaining (60%)</strong>
+                                    </div>
+                                    <div class="progress" style="height: 10px;">
+                                        <div class="progress-bar progress-bar-purr" role="progressbar" style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+
+                                <a href="pricing.html" class="btn btn-outline-primary-custom w-100 py-3 mt-4 fw-bold">
+                                    <i data-lucide="plus" class="size-18 me-1 align-middle"></i> TOP UP / BUY NEW PACK
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-7">
+                            <div class="glass-card p-4 p-md-5 rounded-4 shadow-sm bg-white border-0 h-100">
+                                <h4 class="fw-bold mb-3">Session Usage History</h4>
+                                <div class="table-responsive">
+                                    <table class="table table-hover align-middle">
+                                        <thead class="bg-light">
+                                            <tr class="small text-muted">
+                                                <th>DATE</th>
+                                                <th>CLASS NAME</th>
+                                                <th>INSTRUCTOR</th>
+                                                <th>STATUS</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="small fw-semibold">Sep 18, 2026</td>
+                                                <td>Kitten Vinyasa Flow</td>
+                                                <td class="text-muted small">Maya Chen</td>
+                                                <td><span class="badge bg-success text-white px-2 py-1">Completed</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="small fw-semibold">Sep 10, 2026</td>
+                                                <td>Gentle Purr Restorative</td>
+                                                <td class="text-muted small">Sara Jenkins</td>
+                                                <td><span class="badge bg-success text-white px-2 py-1">Completed</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="small fw-semibold">Sep 01, 2026</td>
+                                                <td>5-Class Pack Purchased</td>
+                                                <td class="text-muted small">Studio Store</td>
+                                                <td><span class="badge bg-info text-white px-2 py-1">+5 Credits</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB 3: UPCOMING SPECIAL EVENTS -->
+                <div class="tab-pane fade" id="tab-events" role="tabpanel">
+                    <div class="glass-card p-4 p-md-5 rounded-4 shadow-sm bg-white border-0">
+                        <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
+                            <div>
+                                <h4 class="fw-bold mb-1">Upcoming Special Event Schedules</h4>
+                                <p class="text-muted small mb-0">Exclusive workshops, kitten social hours, and moon sound baths.</p>
+                            </div>
+                            <span class="badge bg-light text-primary-custom px-3 py-2 rounded-pill fw-bold">Guest Early RSVP Active</span>
+                        </div>
+
+                        <div class="row g-4">
+                            <!-- Event 1 -->
+                            <div class="col-lg-4 col-md-6">
+                                <div class="p-4 bg-light rounded-4 h-100 d-flex flex-column border">
+                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                        <span class="badge bg-secondary-custom text-white">Oct 14, 2026</span>
+                                        <small class="text-muted">7:00 PM</small>
+                                    </div>
+                                    <h5 class="fw-bold mb-2">Full Moon Purr Meditation</h5>
+                                    <p class="text-muted small mb-3">Immersive Tibetan singing bowls with guided somatic breathwork and calm resting foster cats.</p>
+                                    <div class="mt-auto pt-3 border-top d-flex justify-content-between align-items-center">
+                                        <span class="small text-muted">4 Spots Left</span>
+                                        <button class="btn btn-primary btn-sm py-2 px-3" onclick="alert('RSVP Confirmed for Full Moon Purr Meditation!')">RSVP Spot</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Event 2 -->
+                            <div class="col-lg-4 col-md-6">
+                                <div class="p-4 bg-light rounded-4 h-100 d-flex flex-column border">
+                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                        <span class="badge bg-secondary-custom text-white">Oct 22, 2026</span>
+                                        <small class="text-muted">3:00 PM</small>
+                                    </div>
+                                    <h5 class="fw-bold mb-2">Kitten Social Hour &amp; Tea</h5>
+                                    <p class="text-muted small mb-3">A relaxed social afternoon with new foster litters, herbal botanical tea pairings, and gentle stretches.</p>
+                                    <div class="mt-auto pt-3 border-top d-flex justify-content-between align-items-center">
+                                        <span class="small text-muted">6 Spots Left</span>
+                                        <button class="btn btn-primary btn-sm py-2 px-3" onclick="alert('RSVP Confirmed for Kitten Social Hour & Tea!')">RSVP Spot</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Event 3 -->
+                            <div class="col-lg-4 col-md-6">
+                                <div class="p-4 bg-light rounded-4 h-100 d-flex flex-column border">
+                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                        <span class="badge bg-secondary-custom text-white">Nov 02, 2026</span>
+                                        <small class="text-muted">11:00 AM</small>
+                                    </div>
+                                    <h5 class="fw-bold mb-2">Adoption Mixer &amp; Gentle Flow</h5>
+                                    <p class="text-muted small mb-3">Meet adoptable foster cats from Rescue Paws Alliance and learn about foster-to-adopt journeys.</p>
+                                    <div class="mt-auto pt-3 border-top d-flex justify-content-between align-items-center">
+                                        <span class="small text-muted">Free with Pass</span>
+                                        <button class="btn btn-primary btn-sm py-2 px-3" onclick="alert('RSVP Confirmed for Adoption Mixer!')">RSVP Spot</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB 4: MANAGE PAYMENTS & INVOICES -->
+                <div class="tab-pane fade" id="tab-payments" role="tabpanel">
+                    <div class="row g-4">
+                        <div class="col-lg-5">
+                            <div class="glass-card p-4 p-md-5 rounded-4 shadow-sm bg-white border-0 h-100">
+                                <h4 class="fw-bold mb-3">Saved Payment Methods</h4>
+                                <div class="p-4 bg-light rounded-4 border mb-4">
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <div class="d-flex align-items-center">
+                                            <i class="fa-brands fa-cc-visa text-primary-custom fs-2 me-3"></i>
+                                            <div>
+                                                <div class="fw-bold mb-0">Visa ending in 4242</div>
+                                                <small class="text-muted">Expires 08/28 &bull; Default Card</small>
+                                            </div>
+                                        </div>
+                                        <span class="badge bg-success text-white">Active</span>
+                                    </div>
+                                    <button class="btn btn-outline-dark btn-sm w-100 py-2" onclick="alert('Update card modal')">Update Card Details</button>
+                                </div>
+
+                                <h5 class="fw-bold mb-2">Billing Address</h5>
+                                <p class="text-muted small mb-0">Maya Parker<br>123 Paws Way, Apt 4B<br>San Francisco, CA 94107</p>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-7">
+                            <div class="glass-card p-4 p-md-5 rounded-4 shadow-sm bg-white border-0 h-100">
+                                <h4 class="fw-bold mb-3">Payment Receipts &amp; Invoices</h4>
+                                <div class="table-responsive">
+                                    <table class="table table-hover align-middle">
+                                        <thead class="bg-light">
+                                            <tr class="small text-muted">
+                                                <th>INVOICE ID</th>
+                                                <th>DATE</th>
+                                                <th>DESCRIPTION</th>
+                                                <th>AMOUNT</th>
+                                                <th>RECEIPT</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="small fw-semibold">#INV-2026-891</td>
+                                                <td class="small text-muted">Sep 01, 2026</td>
+                                                <td>5-Class Kitten Flow Pack</td>
+                                                <td class="fw-bold">$125.00</td>
+                                                <td><button class="btn btn-outline-secondary btn-sm py-1 px-2" onclick="alert('Downloading Invoice #INV-2026-891')"><i data-lucide="download" class="size-14"></i> PDF</button></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="small fw-semibold">#INV-2026-724</td>
+                                                <td class="small text-muted">Aug 14, 2026</td>
+                                                <td>Single Intro Purr Pass</td>
+                                                <td class="fw-bold">$28.00</td>
+                                                <td><button class="btn btn-outline-secondary btn-sm py-1 px-2" onclick="alert('Downloading Invoice #INV-2026-724')"><i data-lucide="download" class="size-14"></i> PDF</button></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="assets/js/main.js"></script>
+    <script>
+        function togglePasswordVisibility(inputId, el) {
+            const input = document.getElementById(inputId);
+            const type = input.getAttribute('type') === 'password' ? 'text' : 'password';
+            input.setAttribute('type', type);
+
+            const icon = el.querySelector('i');
+            if (type === 'text') {
+                icon.setAttribute('data-lucide', 'eye-off');
+            } else {
+                icon.setAttribute('data-lucide', 'eye');
+            }
+            if (window.lucide) lucide.createIcons();
+        }
+
+        function showDashboardView() {
+            document.getElementById('auth-view').classList.add('d-none');
+            document.getElementById('dashboard-view').classList.remove('d-none');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            if (window.lucide) lucide.createIcons();
+        }
+
+        function showAuthView() {
+            document.getElementById('dashboard-view').classList.add('d-none');
+            document.getElementById('auth-view').classList.remove('d-none');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            if (window.lucide) lucide.createIcons();
+        }
+
+        function handleSlotBooking(e) {
+            e.preventDefault();
+            const alertBox = document.getElementById('booking-alert');
+            alertBox.classList.remove('d-none');
+            setTimeout(() => {
+                alertBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }, 100);
+        }
+
+        // Check URL parameters for direct dashboard open
+        if (window.location.search.includes('dashboard=true')) {
+            showDashboardView();
+        }
+    </script>
+</body>
+
+</html>
