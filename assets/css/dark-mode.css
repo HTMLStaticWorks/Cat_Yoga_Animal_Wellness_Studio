@@ -584,4 +584,56 @@
     text-decoration: underline !important;
 }
 
+/* Dashboard & Wellness Waiver Dark Mode Visibility */
+[data-theme="dark"] .btn-outline-primary-custom {
+    border: 1.5px solid var(--primary-light) !important;
+    color: #FFFFFF !important;
+    background: rgba(77, 139, 117, 0.2) !important;
+}
+
+[data-theme="dark"] .btn-outline-primary-custom:hover {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+    color: #FFFFFF !important;
+}
+
+[data-theme="dark"] .btn-outline-primary-custom i,
+[data-theme="dark"] .btn-outline-primary-custom svg {
+    color: #FFFFFF !important;
+    stroke: #FFFFFF !important;
+}
+
+[data-theme="dark"] .btn-outline-secondary-custom {
+    border: 1.5px solid var(--secondary-light) !important;
+    color: #FFFFFF !important;
+    background: rgba(224, 122, 95, 0.2) !important;
+}
+
+[data-theme="dark"] .btn-outline-secondary-custom:hover {
+    background-color: var(--secondary-color) !important;
+    border-color: var(--secondary-color) !important;
+    color: #FFFFFF !important;
+}
+
+[data-theme="dark"] .btn-outline-secondary-custom i,
+[data-theme="dark"] .btn-outline-secondary-custom svg {
+    color: #FFFFFF !important;
+    stroke: #FFFFFF !important;
+}
+
+[data-theme="dark"] .dash-card .bg-light {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+[data-theme="dark"] #waiver-reminders .bg-light h6 {
+    color: #FFFFFF !important;
+}
+
+[data-theme="dark"] #waiver-reminders .bg-light ul,
+[data-theme="dark"] #waiver-reminders .bg-light li {
+    color: #CCCCCC !important;
+}
+
+
 
