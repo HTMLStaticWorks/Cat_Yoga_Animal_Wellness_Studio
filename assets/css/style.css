@@ -527,6 +527,18 @@ body {
     border: none;
     box-shadow: var(--shadow-md);
     transition: var(--transition-base);
+    display: flex;
+    flex-direction: column;
+}
+
+.climb-card .card-body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.climb-card .card-body a:last-child {
+    margin-top: auto;
 }
 
 .climb-card:hover {
@@ -536,14 +548,50 @@ body {
 
 .climb-card img {
     width: 100%;
-    height: 300px;
+    height: 260px;
+    aspect-ratio: 4 / 3;
     object-fit: cover;
+    object-position: center;
     display: block;
     transition: var(--transition-slow);
 }
 
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .climb-card img {
+        height: 220px;
+        aspect-ratio: 4 / 3;
+    }
+}
+
 .climb-card:hover img {
-    transform: scale(1.1);
+    transform: scale(1.05);
+}
+
+/* Studio Hours Floating Badge */
+.studio-hours-badge {
+    border-bottom-right-radius: 1.25rem !important;
+    border-top-left-radius: 1.25rem !important;
+    border-bottom-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+}
+
+@media (max-width: 575.98px) {
+    .studio-hours-badge {
+        padding: 0.5rem 0.85rem !important;
+        max-width: 75%;
+        border-bottom-right-radius: 0.85rem !important;
+        border-top-left-radius: 0.85rem !important;
+    }
+
+    .studio-hours-badge h4 {
+        font-size: 0.75rem !important;
+        letter-spacing: 0.5px !important;
+        margin-bottom: 2px !important;
+    }
+
+    .studio-hours-badge p {
+        font-size: 0.68rem !important;
+    }
 }
 
 /* Utilities */
@@ -565,6 +613,13 @@ body {
     background-repeat: no-repeat;
     background-image: linear-gradient(135deg, rgba(15, 23, 19, 0.92) 0%, rgba(15, 23, 19, 0.75) 50%, rgba(15, 23, 19, 0.65) 100%), url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
     color: #FFFFFF !important;
+}
+
+.page-header.about-header,
+.page-header.gallery-header,
+.page-header.adoptions-header,
+.page-header.pricing-header {
+    background-position: center 20% !important;
 }
 
 .page-header h1 {
@@ -622,6 +677,47 @@ body {
 
 .tracking-widest {
     letter-spacing: 0.2em;
+}
+
+/* Contact Info Cards Alignment */
+.contact-info-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+}
+
+.contact-info-card h6 {
+    letter-spacing: 1px;
+    font-size: 0.95rem;
+    min-height: 2.2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.contact-info-card p {
+    margin-top: auto;
+    word-break: break-word;
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .contact-info-card {
+        padding: 1.5rem 0.5rem !important;
+    }
+
+    .contact-info-card h6 {
+        font-size: 0.78rem;
+        letter-spacing: 0.5px;
+        min-height: 2.2em;
+    }
+
+    .contact-info-card p {
+        font-size: 0.74rem;
+    }
 }
 
 /* Grid Pattern Overlay */
@@ -774,6 +870,38 @@ footer .social-links a:hover i {
     padding: 0.65rem 1.25rem !important;
     font-size: 0.88rem !important;
     border-radius: 50px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.auth-card .btn-primary:hover,
+.auth-card .btn-primary:focus {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(77, 139, 117, 0.45) !important;
+    background: linear-gradient(135deg, var(--primary-light), var(--primary-color)) !important;
+    color: #FFFFFF !important;
+}
+
+.auth-card .btn-primary:active {
+    transform: translateY(0);
+}
+
+.auth-card a {
+    transition: var(--transition-base);
+    display: inline-block;
+}
+
+.auth-card a.text-primary-custom:hover,
+.auth-card a.text-primary-custom:focus {
+    color: var(--primary-dark) !important;
+    text-decoration: underline !important;
+    opacity: 0.9;
+}
+
+.auth-card a.text-secondary-custom:hover,
+.auth-card a.text-secondary-custom:focus {
+    color: var(--secondary-dark) !important;
+    text-decoration: underline !important;
+    opacity: 0.9;
 }
 
 .auth-toggles {
@@ -848,9 +976,21 @@ footer .social-links a:hover i {
     letter-spacing: 2px;
 }
 
-.text-primary-custom:hover,
-.text-secondary-custom:hover {
-    text-decoration: none !important;
+a.text-primary-custom,
+a.text-secondary-custom {
+    transition: var(--transition-base);
+}
+
+a.text-secondary-custom:hover,
+a.text-secondary-custom:focus {
+    color: var(--secondary-dark) !important;
+    text-decoration: underline !important;
+}
+
+a.text-primary-custom:hover,
+a.text-primary-custom:focus {
+    color: var(--primary-dark) !important;
+    text-decoration: underline !important;
 }
 
 /* =============================================
@@ -862,7 +1002,9 @@ footer .social-links a:hover i {
 h2 span:hover,
 .navbar-brand:hover,
 span.text-secondary-custom:hover,
-span.text-primary-custom:hover {
+span.text-primary-custom:hover,
+div.text-secondary-custom:hover,
+div.text-primary-custom:hover {
     text-decoration: none !important;
 }
 
@@ -1058,7 +1200,12 @@ span.text-primary-custom:hover {
     border-radius: 20px;
     height: 100%;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.workshop-card .border-white-10 {
+    border-color: rgba(255, 255, 255, 0.1) !important;
 }
 
 .workshop-card:hover {
@@ -1097,6 +1244,16 @@ span.text-primary-custom:hover {
 .workshop-card .btn {
     flex-shrink: 0;
     white-space: nowrap;
+    border-radius: 50px;
+    transition: var(--transition-base);
+}
+
+.workshop-card .btn:hover {
+    background: var(--secondary-color) !important;
+    border-color: var(--secondary-color) !important;
+    color: #FFFFFF !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(224, 122, 95, 0.35);
 }
 
 #home2-cta {
@@ -1231,21 +1388,12 @@ h1.display-3 {
     }
 
     .workshop-card {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
-        padding: 1.5rem !important;
-    }
-
-    .workshop-card .pe-3 {
-        padding-right: 0 !important;
-        width: 100%;
+        padding: 1.25rem !important;
     }
 
     .workshop-card .btn {
         width: 100%;
         text-align: center;
-        margin-top: 0.25rem;
     }
 
     .stats-box {
@@ -1687,6 +1835,14 @@ body.dashboard-body {
         transform: translateX(0);
     }
 
+    #sidebarToggleBtn {
+        display: inline-flex !important;
+    }
+
+    #sidebarCloseBtn {
+        display: block !important;
+    }
+
     .dashboard-main {
         padding: 24px 20px;
     }
@@ -1723,6 +1879,10 @@ body.dashboard-body {
 
     .dash-card {
         padding: 20px 16px;
+    }
+
+    .dash-card-title {
+        font-size: 1.1rem;
     }
 }
 
