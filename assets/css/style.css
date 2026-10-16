@@ -224,6 +224,8 @@ body {
     color: var(--primary-color) !important;
     display: inline-flex;
     align-items: center;
+    justify-content: center;
+    height: 40px;
     line-height: 1;
     padding: 0;
     margin: 0;
@@ -234,6 +236,8 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    width: 24px;
+    height: 24px;
 }
 
 .navbar-collapse {
@@ -244,7 +248,7 @@ body {
     display: flex;
     align-items: center;
     margin: 0 auto;
-    gap: 2px;
+    gap: 4px;
 }
 
 .nav-item {
@@ -258,17 +262,22 @@ body {
     text-transform: uppercase;
     letter-spacing: 0.6px;
     color: var(--text-dark) !important;
-    margin: 0 2px;
-    padding: 0.45rem 0.55rem !important;
+    margin: 0 1px;
+    height: 40px;
+    padding: 0 0.85rem !important;
     white-space: nowrap;
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     line-height: 1;
+    border-radius: 20px;
+    transition: var(--transition-base);
 }
 
 .nav-link:hover,
 .nav-link.active {
     color: var(--primary-color) !important;
+    background-color: rgba(77, 139, 117, 0.08);
 }
 
 /* Navbar Toggle & Icons */
@@ -283,12 +292,12 @@ body {
 #rtl-toggle,
 .navbar #theme-toggle,
 .navbar #rtl-toggle {
-    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+    border: 1px solid rgba(0, 0, 0, 0.12) !important;
     border-radius: 50% !important;
-    width: 38px;
-    height: 38px;
-    min-width: 38px;
-    min-height: 38px;
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    min-height: 40px;
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -309,6 +318,8 @@ body {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
+    width: 20px !important;
+    height: 20px !important;
     margin: 0 !important;
     padding: 0 !important;
 }
@@ -317,7 +328,7 @@ body {
 #rtl-toggle:hover,
 .navbar #theme-toggle:hover,
 .navbar #rtl-toggle:hover {
-    background-color: rgba(0, 0, 0, 0.04);
+    background-color: rgba(0, 0, 0, 0.05);
 }
 
 .navbar .btn {
@@ -325,8 +336,9 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    height: 38px;
-    padding: 0 1.2rem;
+    height: 40px;
+    min-height: 40px;
+    padding: 0 1.35rem;
     font-size: 0.85rem;
     font-weight: 600;
     letter-spacing: 0.5px;
@@ -573,16 +585,26 @@ body {
     transition: var(--transition-base);
     display: flex;
     flex-direction: column;
+    text-align: left;
 }
 
 .climb-card .card-body {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
     flex-grow: 1;
+}
+
+.climb-card .card-title,
+.climb-card .card-text {
+    text-align: left;
+    width: 100%;
 }
 
 .climb-card .card-body a:last-child {
     margin-top: auto;
+    align-self: flex-start;
 }
 
 .climb-card:hover {
@@ -1027,7 +1049,11 @@ footer .social-links a:hover i {
     color: #FFFFFF !important;
 }
 
-.social-btn:hover i {
+.social-btn:hover i,
+.social-btn:hover svg,
+.social-btn:hover .text-primary-custom {
+    color: #FFFFFF !important;
+    fill: #FFFFFF !important;
     transform: scale(1.1);
 }
 
@@ -1136,8 +1162,37 @@ div.text-primary-custom:hover {
     /* Keep it static on hover */
 }
 
+/* RESERVE YOUR CLASS SLOT Form Styling */
+.cta-form-card {
+    border: 1.5px solid rgba(77, 139, 117, 0.3) !important;
+    background: #FFFFFF !important;
+    box-shadow: 0 12px 36px rgba(77, 139, 117, 0.10) !important;
+}
+
 .cta-form-card .small {
     color: var(--text-dark) !important;
+}
+
+.cta-form-card .form-control {
+    border: 1.5px solid #CAD5CF !important;
+    background-color: #FAF8F5 !important;
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    transition: var(--transition-base);
+}
+
+.cta-form-card .form-control:focus {
+    border-color: var(--primary-color) !important;
+    box-shadow: 0 0 0 3px rgba(77, 139, 117, 0.2) !important;
+    background-color: #FFFFFF !important;
+}
+
+.cta-form-card .form-control::placeholder {
+    font-size: 0.85rem !important;
+    color: #8E9E97 !important;
+    font-weight: 400;
+    opacity: 0.85;
+    letter-spacing: 0.2px;
 }
 
 /* Pricing Popular Badge */

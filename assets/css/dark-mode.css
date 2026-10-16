@@ -509,6 +509,10 @@
     color: #FFFFFF !important;
 }
 
+[data-theme="dark"] .cta-form-card .form-control::placeholder {
+    color: #888888 !important;
+}
+
 [data-theme="dark"] #testimonials .fw-bold {
     color: #FFFFFF !important;
 }
