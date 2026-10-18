@@ -67,6 +67,40 @@
     }
     </script>
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>
+
+    <style>
+        @media (min-width: 992px) and (max-width: 1199.98px) {
+            .specialists-section .specialist-card {
+                padding: 1.5rem 1rem !important;
+            }
+
+            .specialists-section .specialist-avatar {
+                width: 120px;
+                height: 120px;
+                min-width: 120px;
+                min-height: 120px;
+                margin-bottom: 1.25rem;
+            }
+
+            .specialists-section .specialist-name {
+                font-size: 1.02rem;
+                letter-spacing: 0.03em;
+                min-height: 2.6rem;
+            }
+
+            .specialists-section .specialist-role {
+                font-size: 0.75rem;
+                letter-spacing: 0.8px;
+                min-height: 2.6rem;
+                margin-bottom: 0.75rem;
+            }
+
+            .specialists-section .specialist-bio {
+                font-size: 0.825rem;
+                line-height: 1.5;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -293,9 +327,9 @@
                 <h2 class="display-4 section-title">MEET THE <span class="text-primary-custom">SPECIALISTS</span></h2>
                 <p class="text-muted fs-5">Compassionate yoga instructors and certified animal welfare professionals.</p>
             </div>
-            <div class="row g-4 justify-content-center">
+            <div class="row g-4 justify-content-center align-items-stretch">
                 <div class="col-lg-3 col-md-6 animate-on-scroll d-flex">
-                    <div class="glass-card specialist-card p-4 w-100">
+                    <div class="glass-card specialist-card p-4 w-100 h-100 d-flex flex-column">
                         <div class="specialist-avatar mx-auto">
                             <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
                                 alt="Maya Chen - Lead Yoga Director">
@@ -306,18 +340,18 @@
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 animate-on-scroll d-flex">
-                    <div class="glass-card specialist-card p-4 w-100">
+                    <div class="glass-card specialist-card p-4 w-100 h-100 d-flex flex-column">
                         <div class="specialist-avatar mx-auto">
                             <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
                                 alt="Dr. Elena Ramos - Animal Behavior Specialist">
                         </div>
-                        <h5 class="specialist-name">DR. ELENA RAMOS</h5>
+                        <h5 class="specialist-name"><span class="text-nowrap">DR. ELENA RAMOS</span></h5>
                         <p class="specialist-role">Animal Welfare Lead</p>
                         <p class="specialist-bio">Veterinary behavior specialist ensuring all rescue cats feel safe, loved, and enriched.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 animate-on-scroll d-flex">
-                    <div class="glass-card specialist-card p-4 w-100">
+                    <div class="glass-card specialist-card p-4 w-100 h-100 d-flex flex-column">
                         <div class="specialist-avatar mx-auto">
                             <img src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
                                 alt="Leo Carter - Sound Healer">
@@ -328,7 +362,7 @@
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 animate-on-scroll d-flex">
-                    <div class="glass-card specialist-card p-4 w-100">
+                    <div class="glass-card specialist-card p-4 w-100 h-100 d-flex flex-column">
                         <div class="specialist-avatar mx-auto">
                             <img src="assets/images/coach2.jpg"
                                 onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80';"

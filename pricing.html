@@ -74,6 +74,36 @@
             box-shadow: 0 8px 25px rgba(77, 139, 117, 0.4);
             transform: scale(1.05);
         }
+
+        /* Guest Perks & Care alignment */
+        .perk-card {
+            transition: var(--transition-base);
+        }
+
+        .perk-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .perk-title {
+            min-height: 2.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        @media (min-width: 768px) and (max-width: 991.98px) {
+            .perk-card {
+                padding: 1.5rem 1rem !important;
+            }
+
+            .perk-title {
+                font-size: 1rem;
+                letter-spacing: 0.08em;
+                min-height: 3rem;
+                line-height: 1.35;
+            }
+        }
     </style>
 </head>
 
@@ -205,26 +235,26 @@
                 <h2 class="display-5 fw-bold tracking-widest uppercase">GUEST PERKS &amp; CARE</h2>
                 <p class="text-muted">Every pass includes thoughtful amenities for you and utmost safety for our cats.</p>
             </div>
-            <div class="row g-4">
-                <div class="col-md-4 animate-on-scroll">
-                    <div class="p-4 bg-white rounded-4 shadow-sm h-100 text-center">
+            <div class="row g-4 align-items-stretch">
+                <div class="col-md-4 animate-on-scroll d-flex">
+                    <div class="perk-card p-4 bg-white rounded-4 shadow-sm h-100 w-100 text-center d-flex flex-column">
                         <div class="text-primary-custom mb-3"><i data-lucide="coffee" class="size-32 mx-auto"></i></div>
-                        <h5 class="fw-bold mb-3 tracking-widest">ORGANIC TEA BAR</h5>
-                        <p class="text-muted small">Enjoy complimentary hot calming teas and botanical elixirs before or after every session.</p>
+                        <h5 class="fw-bold mb-3 tracking-widest perk-title">ORGANIC <span class="text-nowrap">TEA BAR</span></h5>
+                        <p class="text-muted small mb-0 flex-grow-1">Enjoy complimentary hot calming teas and botanical elixirs before or after every session.</p>
                     </div>
                 </div>
-                <div class="col-md-4 animate-on-scroll">
-                    <div class="p-4 bg-white rounded-4 shadow-sm h-100 text-center">
+                <div class="col-md-4 animate-on-scroll d-flex">
+                    <div class="perk-card p-4 bg-white rounded-4 shadow-sm h-100 w-100 text-center d-flex flex-column">
                         <div class="text-primary-custom mb-3"><i data-lucide="calendar" class="size-32 mx-auto"></i></div>
-                        <h5 class="fw-bold mb-3 tracking-widest">PRIORITY SLOT PICKER</h5>
-                        <p class="text-muted small">Reserve your favorite morning or evening slot in advance through your seamless guest dashboard.</p>
+                        <h5 class="fw-bold mb-3 tracking-widest perk-title">PRIORITY <span class="text-nowrap">SLOT PICKER</span></h5>
+                        <p class="text-muted small mb-0 flex-grow-1">Reserve your favorite morning or evening slot in advance through your seamless guest dashboard.</p>
                     </div>
                 </div>
-                <div class="col-md-4 animate-on-scroll">
-                    <div class="p-4 bg-white rounded-4 shadow-sm h-100 text-center">
+                <div class="col-md-4 animate-on-scroll d-flex">
+                    <div class="perk-card p-4 bg-white rounded-4 shadow-sm h-100 w-100 text-center d-flex flex-column">
                         <div class="text-primary-custom mb-3"><i data-lucide="heart" class="size-32 mx-auto"></i></div>
-                        <h5 class="fw-bold mb-3 tracking-widest">SHELTER RESCUE FUND</h5>
-                        <p class="text-muted small">10% of every dollar spent directly provides vet care, vaccines, and food for foster cats.</p>
+                        <h5 class="fw-bold mb-3 tracking-widest perk-title">SHELTER <span class="text-nowrap">RESCUE FUND</span></h5>
+                        <p class="text-muted small mb-0 flex-grow-1">10% of every dollar spent directly provides vet care, vaccines, and food for foster cats.</p>
                     </div>
                 </div>
             </div>
