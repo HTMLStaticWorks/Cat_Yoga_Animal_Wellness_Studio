@@ -236,6 +236,79 @@
     color: #AAAAAA !important;
 }
 
+[data-theme="dark"] .specialists-section .specialist-avatar {
+    border-color: rgba(255, 255, 255, 0.12) !important;
+    background-color: #1A221E !important;
+}
+
+[data-theme="dark"] .specialists-section .specialist-role {
+    color: var(--secondary-light) !important;
+}
+
+[data-theme="dark"] .specialists-section .specialist-bio {
+    color: #A0B2AA !important;
+}
+
+[data-theme="dark"] .values-card {
+    background-color: #1E1E1E !important;
+}
+
+[data-theme="dark"] .values-card-title {
+    color: #F0F0F0 !important;
+}
+
+[data-theme="dark"] .values-card-text {
+    color: #AAAAAA !important;
+}
+
+[data-theme="dark"] .about-team-section .team-avatar {
+    border-color: rgba(255, 255, 255, 0.12) !important;
+    background-color: #1A221E !important;
+}
+
+[data-theme="dark"] .about-team-section .team-name {
+    color: #FAF8F5 !important;
+}
+
+[data-theme="dark"] .about-team-section .team-role {
+    color: var(--secondary-light) !important;
+}
+
+[data-theme="dark"] .about-team-section .team-bio {
+    color: #A0B2AA !important;
+}
+
+[data-theme="dark"] .classes-section .class-card {
+    background-color: #1E1E1E !important;
+    border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+[data-theme="dark"] .classes-section .class-title {
+    color: #F0F0F0 !important;
+}
+
+[data-theme="dark"] .classes-section .class-description {
+    color: #AAAAAA !important;
+}
+
+[data-theme="dark"] .classes-section .class-badge {
+    background-color: #262626 !important;
+    color: var(--primary-light) !important;
+}
+
+[data-theme="dark"] .service-instructor-avatar {
+    border-color: rgba(255, 255, 255, 0.12) !important;
+    background-color: #1A221E !important;
+}
+
+[data-theme="dark"] .service-instructor-name {
+    color: #FAF8F5 !important;
+}
+
+[data-theme="dark"] .service-instructor-role {
+    color: var(--primary-light) !important;
+}
+
 /* Climb cards */
 [data-theme="dark"] .climb-card {
     background-color: #1E1E1E !important;
@@ -261,6 +334,10 @@
 
 [data-theme="dark"] .contact-info-card h6 {
     color: #F0F0F0 !important;
+}
+
+[data-theme="dark"] .contact-info-card p {
+    color: #AAAAAA !important;
 }
 
 /* =============================================
