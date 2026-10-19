@@ -31,21 +31,38 @@
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>
 
     <style>
+        .values-card-title {
+            gap: 0.35rem;
+        }
+
         @media (min-width: 768px) and (max-width: 991.98px) {
             .values-card-media {
                 height: 180px;
             }
 
             .values-card-body {
-                padding: 1.5rem 1rem !important;
+                padding: 1.5rem 0.75rem !important;
             }
 
             .values-card-title {
-                font-size: 1.05rem;
-                letter-spacing: 0.03em;
+                font-size: 1rem;
+                letter-spacing: 0.02em;
                 min-height: 3.2rem;
-                line-height: 1.3;
+                line-height: 1.25;
                 margin-bottom: 0.75rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                gap: 0.15rem;
+            }
+
+            .values-card-title span {
+                display: block;
+                width: 100%;
+                text-align: center;
+                white-space: nowrap;
             }
 
             .values-card-text {
@@ -166,7 +183,7 @@
                                 alt="Animal Welfare First">
                         </div>
                         <div class="values-card-body d-flex flex-column flex-grow-1">
-                            <h4 class="values-card-title">ANIMAL <span class="text-nowrap">WELFARE FIRST</span></h4>
+                            <h4 class="values-card-title"><span>ANIMAL</span> <span>WELFARE FIRST</span></h4>
                             <p class="values-card-text">The studio keeps and cares for cats that roam freely during yoga
                                 sessions, allowing visitors to interact with them in a safe, comfortable, and cage-free
                                 environment.</p>
@@ -180,7 +197,7 @@
                                 alt="Mindful Healing">
                         </div>
                         <div class="values-card-body d-flex flex-column flex-grow-1">
-                            <h4 class="values-card-title">HOLISTIC <span class="text-nowrap">HEALING</span></h4>
+                            <h4 class="values-card-title"><span>HOLISTIC</span> <span>HEALING</span></h4>
                             <p class="values-card-text">We combine somatic yoga, singing bowls, and feline purr
                                 vibrations to relieve tension, reduce mental stress, and regulate the nervous system.</p>
                         </div>
@@ -193,7 +210,7 @@
                                 alt="Compassionate Community">
                         </div>
                         <div class="values-card-body d-flex flex-column flex-grow-1">
-                            <h4 class="values-card-title">COMPASSIONATE <span class="text-nowrap">COMMUNITY</span></h4>
+                            <h4 class="values-card-title"><span>COMPASSIONATE</span> <span>COMMUNITY</span></h4>
                             <p class="values-card-text">We unite passionate yogis with shelter adoption partners,
                                 creating a comfortable space where rescue cats socialize and find loving homes.</p>
                         </div>
