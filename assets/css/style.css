@@ -1364,6 +1364,42 @@ div.text-primary-custom:hover {
     text-align: center;
 }
 
+@media (max-width: 767.98px) {
+    .values-card-media {
+        height: 200px;
+    }
+
+    .values-card-body {
+        padding: 1.5rem 1.25rem !important;
+    }
+
+    .values-card-title {
+        font-size: 1.1rem;
+        letter-spacing: 0.025em;
+        min-height: auto;
+        line-height: 1.25;
+        margin-bottom: 0.75rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 0.15rem;
+    }
+
+    .values-card-title span {
+        display: block;
+        width: 100%;
+        text-align: center;
+        white-space: nowrap;
+    }
+
+    .values-card-text {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+}
+
 @media (min-width: 768px) and (max-width: 991.98px) {
     .values-card-media {
         height: 180px;
